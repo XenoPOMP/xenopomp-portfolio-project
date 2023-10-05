@@ -1,61 +1,62 @@
 import localFont from 'next/font/local';
 
 import { normalOrItalic } from '@/src/fonts/font-config';
+import { FontWeight } from '@/src/fonts/font-weight';
 
 const SFProDisplay = localFont({
   src: [
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Black.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-BlackItalic.otf',
-      fontWeight: '900',
+      fontWeight: FontWeight.Black,
     }),
 
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Bold.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-BoldItalic.otf',
-      fontWeight: '700',
+      fontWeight: FontWeight.Bold,
     }),
 
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Heavy.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-HeavyItalic.otf',
-      fontWeight: '800',
+      fontWeight: FontWeight.Heavy,
     }),
 
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Light.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-LightItalic.otf',
-      fontWeight: '300',
+      fontWeight: FontWeight.Light,
     }),
 
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Medium.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-MediumItalic.otf',
-      fontWeight: '500',
+      fontWeight: FontWeight.Medium,
     }),
 
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Regular.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-RegularItalic.otf',
-      fontWeight: '400',
+      fontWeight: FontWeight.Regular,
     }),
 
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Semibold.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-SemiboldItalic.otf',
-      fontWeight: '600',
+      fontWeight: FontWeight.Semibold,
     }),
 
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Thin.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-ThinItalic.otf',
-      fontWeight: '200',
+      fontWeight: FontWeight.Thin,
     }),
 
     ...normalOrItalic({
       pathToNormal: './SF Pro Display/SF-Pro-Display-Ultralight.otf',
       pathToItalic: './SF Pro Display/SF-Pro-Display-UltralightItalic.otf',
-      fontWeight: '100',
+      fontWeight: FontWeight.Ultralight,
     }),
   ],
   variable: '--font-sf-pro-display',
