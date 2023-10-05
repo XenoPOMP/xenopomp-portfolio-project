@@ -1,8 +1,5 @@
 import localFont from 'next/font/local';
 
-import { normalOrItalic } from '@/src/fonts/font-config';
-import { FontWeight } from '@/src/fonts/font-weight';
-
 const SFProDisplay = localFont({
   src: [
     {

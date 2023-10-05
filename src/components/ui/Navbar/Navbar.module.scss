@@ -1,0 +1,12 @@
+nav.navbar {
+  font-size: 1em; // 1em = 20px
+
+  ul {
+    display: flex;
+    gap: 2em;
+
+    li {
+      font-size: .8em;
+    }
+  }
+}

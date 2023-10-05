@@ -1,0 +1,16 @@
+header.appHeader {
+  @apply bg-primary py-[1.5em];
+
+  font-size: 1rem; // 1em = 20px
+
+  a.logo {
+    font-size: 1.1em;
+  }
+
+  section.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+  }
+}
