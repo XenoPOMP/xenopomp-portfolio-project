@@ -1,6 +1,8 @@
 import { ArrayType } from '@xenopomp/advanced-types';
 import localFont from 'next/font/local';
 
+import { FontStyle } from '@/src/fonts/font-style';
+
 export type LocalFont = Parameters<typeof localFont>[0];
 
 export const normalOrItalic = ({
@@ -16,12 +18,12 @@ export const normalOrItalic = ({
     {
       path: pathToNormal,
       weight: fontWeight,
-      style: 'normal',
+      style: FontStyle.Normal,
     },
     {
       path: pathToItalic,
       weight: fontWeight,
-      style: 'italic',
+      style: FontStyle.Italic,
     },
   ];
 };
