@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import localFont from 'next/font/local';
 
 import { AppConstants } from '@/app/app.constants';
 import Footer from '@/src/components/layout/Footer/Footer';
 import Header from '@/src/components/layout/Header/Header';
 import Providers from '@/src/components/layout/Providers/Providers';
 import SFProDisplay from '@/src/fonts/sf-pro-display-font';
-import ReduxProvider from '@/src/redux/ReduxProvider';
 
 import './globals.scss';
 
