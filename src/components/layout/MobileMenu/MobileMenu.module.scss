@@ -1,0 +1,12 @@
+article.mobileMenu {
+  font-size: 1em; // 1em = 20px
+
+  button.expandButton {
+    font-size: .8em;
+    cursor: pointer;
+
+    svg {
+      height: 1em;
+    }
+  }
+}

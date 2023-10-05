@@ -1,30 +1,49 @@
+import { Defined } from '@xenopomp/advanced-types';
 import cn from 'classnames';
 import Link from 'next/link';
-import { ComponentProps, FC } from 'react';
+import { FC } from 'react';
 
 import styles from './Navbar.module.scss';
 import type { NavbarProps } from './Navbar.props';
 
-const Navbar: FC<NavbarProps> = ({}) => {
-  const linkArray: Array<{
-    text: string;
-    href: string;
-  }> = [
-    {
-      text: 'Проекты',
-      href: '#projects',
-    },
+export const appNavbarLinks: Array<{
+  text: string;
+  href: string;
+}> = [
+  {
+    text: 'Проекты',
+    href: '#projects',
+  },
 
+  {
+    text: 'Обо мне',
+    href: '#about-me',
+  },
+];
+
+const Navbar: FC<NavbarProps> = ({
+  className,
+  variant = 'header',
+  ...props
+}) => {
+  const variantStyles: Record<
+    Defined<typeof variant>,
     {
-      text: 'Обо мне',
-      href: '#about-me',
+      className?: string;
+    }
+  > = {
+    header: {
+      className: cn(styles.header),
     },
-  ];
+  };
 
   return (
-    <nav className={cn(styles.navbar)}>
+    <nav
+      className={cn(styles.navbar, variantStyles[variant].className, className)}
+      {...props}
+    >
       <ul>
-        {linkArray.map((link, index) => {
+        {appNavbarLinks.map((link, index) => {
           const { text, href } = link;
 
           return (

@@ -1,6 +1,6 @@
 import IAppConstants from '@/src/interfaces/AppConstants.interface';
 
 export const AppConstants: IAppConstants = {
-  appName: 'Next Template',
+  appName: 'xeno.pomp',
   maxContainerWidth: '1440px',
 };

@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         primary: '#FFFFFF',
         highlight: '#2678C2',
+        'nav-highlight': 'rgb(34 197 94)',
         'social-media-bg': '#E1E1E1',
         'social-media-icon': '#5E5E5E',
         'social-media-icon-inactive': '#7B7A7A',

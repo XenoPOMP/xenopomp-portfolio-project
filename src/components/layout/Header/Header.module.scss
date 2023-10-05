@@ -12,5 +12,19 @@ header.appHeader {
     justify-content: space-between;
     align-items: center;
     gap: 3em;
+
+    article.mobile {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      nav.desktop {
+        display: none;
+      }
+
+      article.mobile {
+        display: unset;
+      }
+    }
   }
 }
