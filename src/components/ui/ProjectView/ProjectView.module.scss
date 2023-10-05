@@ -1,0 +1,11 @@
+article.projectView {
+  --preview-width: min(25%, 541px);
+
+  display: grid;
+  grid-template-columns: var(--preview-width) 1fr;
+  gap: calc(var(--margin) * 2);
+
+  &.reversed {
+    grid-template-columns: 1fr var(--preview-width);
+  }
+}

@@ -20,6 +20,7 @@ const UiContainer: FC<UiContainerNestedProps> = ({
   style,
   margin,
   maxWidth,
+  ...props
 }) => {
   return (
     <section
@@ -32,6 +33,7 @@ const UiContainer: FC<UiContainerNestedProps> = ({
       }
       className={cn(styles.uiContainer, className)}
       id={id}
+      {...props}
     >
       {children}
     </section>
