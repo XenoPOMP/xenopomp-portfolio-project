@@ -16,12 +16,12 @@ const projectData: IProject[] = sortProjects([
     links: {
       primary: {
         content: 'Посетить сайт',
-        href: '',
+        href: 'https://xeno-coursework-2023.netlify.app/',
       },
 
       secondary: {
         content: 'Исход. код',
-        href: '',
+        href: 'https://github.com/XenoPOMP/coursework-2023',
       },
     },
   },
