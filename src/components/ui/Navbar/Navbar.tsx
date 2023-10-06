@@ -48,9 +48,7 @@ const Navbar: FC<NavbarProps> = ({
 
           return (
             <li key={`navbar-li-elem-${index}`}>
-              <Link href={href} scroll={false}>
-                {text}
-              </Link>
+              <Link href={href}>{text}</Link>
             </li>
           );
         })}

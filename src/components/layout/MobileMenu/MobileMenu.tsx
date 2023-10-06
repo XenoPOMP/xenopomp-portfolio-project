@@ -55,7 +55,6 @@ const MobileMenu: FC<MobileMenuProps> = ({ className, ...props }) => {
                     return (
                       <Link
                         href={href}
-                        scroll={false}
                         className={cn(
                           active && 'text-nav-highlight transition-all'
                         )}

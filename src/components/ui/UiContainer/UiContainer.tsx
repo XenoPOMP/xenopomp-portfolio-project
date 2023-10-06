@@ -3,6 +3,7 @@ import cn from 'classnames';
 import { CSSProperties, FC } from 'react';
 
 import { AppConstants } from '@/app/app.constants';
+import { useUniqueId } from '@/src/hooks/useUniqueId';
 
 import styles from './UiContainer.module.scss';
 import type { UiContainerProps } from './UiContainer.props';
@@ -32,7 +33,7 @@ const UiContainer: FC<UiContainerNestedProps> = ({
         } as CSSProperties
       }
       className={cn(styles.uiContainer, className)}
-      id={id}
+      id={id ?? useUniqueId()}
       {...props}
     >
       {children}

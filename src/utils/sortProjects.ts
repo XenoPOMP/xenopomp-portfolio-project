@@ -4,9 +4,11 @@ import { IProject } from '@/src/interfaces/IProject';
 
 const sortProjects = (targetArray: IProject[]): IProject[] => {
   const priorityQueues: Record<Defined<IProject['priority']>, IProject[]> = {
-    high: targetArray.filter(project => project.priority === 'high'),
-    medium: targetArray.filter(project => project.priority === 'medium'),
-    low: targetArray.filter(project => project.priority === 'low'),
+    high: targetArray.filter(project => (project.priority ?? 'low') === 'high'),
+    medium: targetArray.filter(
+      project => (project.priority ?? 'low') === 'medium'
+    ),
+    low: targetArray.filter(project => (project.priority ?? 'low') === 'low'),
   };
 
   const { high, medium, low } = priorityQueues;

@@ -10,10 +10,20 @@ import type { ProjectSectionProps } from './ProjectSection.props';
 
 const ProjectSection: FC<ProjectSectionProps> = ({}) => {
   return (
-    <UiContainer className={cn(styles.projects)}>
-      <ProjectView project={projectData[0]} />
+    <UiContainer className={cn(styles.projects)} id={'projects'}>
+      {projectData.map((project, index) => {
+        return (
+          <ProjectView
+            project={project}
+            key={`project-view-${index}`}
+            reversed={!(index % 2 === 0)}
+          />
+        );
+      })}
 
-      <ProjectView project={projectData[0]} reversed />
+      {/*<ProjectView project={projectData[0]} />*/}
+
+      {/*<ProjectView project={projectData[0]} reversed />*/}
     </UiContainer>
   );
 };
