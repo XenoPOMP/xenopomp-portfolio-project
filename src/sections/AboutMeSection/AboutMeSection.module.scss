@@ -1,0 +1,130 @@
+section.aboutMe {
+  @apply py-[6em];
+
+  font-size: 1rem; // 1em = 20px
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--margin) * 2);
+
+  article.part {
+    display: flex;
+  }
+
+  article.leftPart {
+    @apply flex-col;
+    
+    justify-content: center;
+    gap: 1.5em;
+
+    header {
+      @apply flex flex-col gap-[.75em];
+
+      line-height: 1.2em;
+
+      h1, p.desc {
+        font-size: 1.75em;
+        line-height: inherit;
+      }
+
+      h1 {
+        @apply font-medium;
+        @apply flex gap-[.28em] items-center;
+      }
+
+      p.desc {
+        @apply font-medium;
+
+        strong {
+          @apply text-highlight;
+
+          font-weight: inherit;
+          font-size: inherit;
+        }
+      }
+    }
+
+    desc {
+      @apply text-font-secondary;
+
+      line-height: 150%;
+    }
+  }
+
+  article.rightPart {
+    justify-content: end;
+
+    img {
+      border-radius: 50%;
+      width: clamp(300px, 50vw, 479px);
+
+      @media (max-width: 1205px) {
+        // width: clamp(150px, 50vw, 479px);
+      }
+    }
+  }
+
+  @media (max-width: 1349px) {
+    font-size: .9rem;
+  }
+
+  @media (max-width: 1216px) {
+    gap: calc(var(--margin) * 1);
+  }
+
+  @media (max-width: 1245px) {
+    font-size: clamp(.75rem, 10vw, .9rem);
+  }
+
+  @media (max-width: 1205px) {
+    @apply flex flex-col-reverse;
+
+    // grid-template-columns: 3fr 1fr;
+
+    article.rightPart {
+      justify-content: center;
+
+      img {
+        width: 45%;
+      }
+    }
+  }
+
+  @media (max-width: 957px) {
+    article.rightPart {
+      img {
+        width: 65%;
+      }
+    }
+  }
+
+  @media (max-width: 661px) {
+    article.rightPart {
+      img {
+        width: 75%;
+      }
+    }
+  }
+
+  @media (max-width: 544px) {
+    article.rightPart {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 579px) {
+    // font-size: .6rem;
+    article.leftPart {
+      header {
+        h1, p.desc {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 493px) {
+    font-size: .65rem;
+  }
+}
