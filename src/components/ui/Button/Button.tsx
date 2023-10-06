@@ -44,7 +44,7 @@ const Button: FC<ButtonProps> = ({
 
   return href ? (
     <>
-      <Link href={href}>
+      <Link href={href} target={'_blank'}>
         <InnerButtonComponent />
       </Link>
     </>
