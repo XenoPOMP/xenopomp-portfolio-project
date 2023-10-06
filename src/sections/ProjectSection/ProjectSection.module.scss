@@ -2,4 +2,12 @@ section.projects {
   @apply flex flex-col gap-[6em] py-[6em];
 
   font-size: 1rem; // 1em = 20px
+
+  @media (max-width: 1216px) {
+    font-size: .8rem;
+  }
+
+  @media (max-width: 906px) {
+    font-size: .75rem;
+  }
 }

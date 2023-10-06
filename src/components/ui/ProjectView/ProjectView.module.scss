@@ -1,10 +1,26 @@
 article.projectView {
-  --preview-width: min(25%, 541px);
+  --preview-width: clamp(350px, 25%, 541px);
 
   display: grid;
   grid-template-columns: var(--preview-width) 1fr;
   gap: calc(var(--margin) * 2);
   font-size: 1em; // 1em = 20px
+
+  @media (max-width: 1216px) {
+    gap: calc(var(--margin) * 1);
+  }
+
+  @media (max-width: 998px) {
+    --preview-width: clamp(300px, 25%, 541px);
+  }
+
+  @media (max-width: 791px) {
+    display: block;
+
+    .photoBlock {
+      display: none;
+    }
+  }
 
   .photoBlock {
     @apply bg-project-preview-primary;
@@ -12,6 +28,8 @@ article.projectView {
     width: 100%;
     aspect-ratio: 541 / 460.6;
     align-self: center;
+    border-radius: .9em;
+    overflow: hidden;
   }
 
   .textBlock {
