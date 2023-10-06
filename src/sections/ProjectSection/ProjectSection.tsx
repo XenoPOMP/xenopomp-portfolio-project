@@ -20,10 +20,6 @@ const ProjectSection: FC<ProjectSectionProps> = ({}) => {
           />
         );
       })}
-
-      {/*<ProjectView project={projectData[0]} />*/}
-
-      {/*<ProjectView project={projectData[0]} reversed />*/}
     </UiContainer>
   );
 };

@@ -1,5 +1,6 @@
 import { isUndefined } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
+import Image from 'next/image';
 import { FC } from 'react';
 import { util } from 'zod';
 
@@ -17,7 +18,7 @@ const ProjectView: FC<ProjectViewProps> = ({
   className,
   ...props
 }) => {
-  const { title, description, madeOn, links } = project;
+  const { title, description, madeOn, links, image } = project;
 
   const getMadeOnString = (): string => {
     const outputStrings: Record<StackTechnology, string> = {
@@ -48,7 +49,9 @@ const ProjectView: FC<ProjectViewProps> = ({
       className={cn(styles.projectView, reversed && styles.reversed, className)}
       {...props}
     >
-      <div className={cn(styles.photoBlock)}>1</div>
+      <div className={cn(styles.photoBlock)}>
+        {image && <Image src={image.src} alt={image.alt} />}
+      </div>
 
       <div className={cn(styles.textBlock)}>
         <header className={cn(styles.titleBlock)}>

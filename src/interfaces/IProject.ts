@@ -24,7 +24,7 @@ export interface IProject {
       } & Pick<ComponentProps<typeof Link>, 'href'>
     >
   >;
-  image?: Pick<ComponentProps<typeof Image>, 'src'> & {
+  image?: Pick<ComponentProps<typeof Image>, 'src' | 'alt'> & {
     orientation: 'square' | 'horizontal' | 'vertical';
   };
 }

@@ -1,3 +1,5 @@
+@import "src/styles/templates";
+
 article.projectView {
   --preview-width: clamp(350px, 25%, 541px);
 
@@ -25,11 +27,21 @@ article.projectView {
   .photoBlock {
     @apply bg-project-preview-primary;
 
+    @extend %flexCenter;
+
     width: 100%;
     aspect-ratio: 541 / 460.6;
     align-self: center;
     border-radius: .9em;
     overflow: hidden;
+
+    img.square, img.vertical {
+      height: min(100vh, calc(100% - 3em * 2));
+    }
+
+    img.horizontal {
+      width: min(100vw, calc(100% - 3em * 2));;
+    }
   }
 
   .textBlock {
