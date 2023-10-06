@@ -38,12 +38,12 @@ const projectData: IProject[] = sortProjects([
     links: {
       primary: {
         content: 'Посетить сайт',
-        href: '',
+        href: 'https://web-pegas-2-0.vercel.app/',
       },
 
       secondary: {
         content: 'Исход. код',
-        href: '',
+        href: 'https://github.com/XenoPOMP/web-pegas-2.0',
       },
     },
   },
@@ -60,12 +60,12 @@ const projectData: IProject[] = sortProjects([
     links: {
       primary: {
         content: 'Документация',
-        href: '',
+        href: 'https://xenopomp.github.io/advanced-types/',
       },
 
       secondary: {
         content: 'Исход. код',
-        href: '',
+        href: 'https://github.com/XenoPOMP/advanced-types',
       },
     },
   },
@@ -83,7 +83,7 @@ const projectData: IProject[] = sortProjects([
     links: {
       secondary: {
         content: 'Исход. код',
-        href: '',
+        href: 'https://github.com/XenoPOMP/image-grabber-extension',
       },
     },
   },
@@ -101,7 +101,7 @@ const projectData: IProject[] = sortProjects([
     links: {
       secondary: {
         content: 'Исход. код',
-        href: '',
+        href: 'https://github.com/XenoPOMP/oldubil_calculator_extension',
       },
     },
   },
@@ -119,12 +119,12 @@ const projectData: IProject[] = sortProjects([
     links: {
       primary: {
         content: 'Посетить сайт',
-        href: '',
+        href: 'https://pizza-tower-platinum.netlify.app/',
       },
 
       secondary: {
         content: 'Исход. код',
-        href: '',
+        href: 'https://github.com/XenoPOMP/pt-platinum',
       },
     },
   },
