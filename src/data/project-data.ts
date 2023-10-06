@@ -1,4 +1,9 @@
+import advancedTypesPreview from '@/public/previews/advanced-types-preview.png';
+import imageGrabberExtensionPreview from '@/public/previews/image-grabber-preview.png';
+import oldubilExtPreview from '@/public/previews/oldubil-ext-preview.png';
+import ptPlatinumPreview from '@/public/previews/pt-platinum-preview.png';
 import smartAcePreview from '@/public/previews/smart-ace-preview.png';
+import wepPegasTwoPreview from '@/public/previews/web-pegas-2.0-preview.png';
 import { IProject } from '@/src/interfaces/IProject';
 import sortProjects from '@/src/utils/sortProjects';
 
@@ -52,6 +57,11 @@ const projectData: IProject[] = sortProjects([
         href: 'https://github.com/XenoPOMP/web-pegas-2.0',
       },
     },
+    image: {
+      src: wepPegasTwoPreview,
+      alt: 'Сайт WebPegas 2.0',
+      orientation: 'square',
+    },
   },
 
   {
@@ -74,6 +84,11 @@ const projectData: IProject[] = sortProjects([
         href: 'https://github.com/XenoPOMP/advanced-types',
       },
     },
+    image: {
+      src: advancedTypesPreview,
+      alt: 'Библиотека advanced-types',
+      orientation: 'horizontal',
+    },
   },
 
   {
@@ -92,6 +107,11 @@ const projectData: IProject[] = sortProjects([
         href: 'https://github.com/XenoPOMP/image-grabber-extension',
       },
     },
+    image: {
+      src: imageGrabberExtensionPreview,
+      alt: 'Расширение Image Grabber',
+      orientation: 'vertical',
+    },
   },
 
   {
@@ -109,6 +129,11 @@ const projectData: IProject[] = sortProjects([
         content: 'Исход. код',
         href: 'https://github.com/XenoPOMP/oldubil_calculator_extension',
       },
+    },
+    image: {
+      src: oldubilExtPreview,
+      alt: 'Расширение для браузера Oldubil Calculator',
+      orientation: 'vertical',
     },
   },
 
@@ -132,6 +157,11 @@ const projectData: IProject[] = sortProjects([
         content: 'Исход. код',
         href: 'https://github.com/XenoPOMP/pt-platinum',
       },
+    },
+    image: {
+      src: ptPlatinumPreview,
+      alt: 'Сайт Pizza Tower',
+      orientation: 'square',
     },
   },
 ]);
