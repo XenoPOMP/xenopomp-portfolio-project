@@ -34,13 +34,14 @@ article.projectView {
     align-self: center;
     border-radius: .9em;
     overflow: hidden;
+    padding: 3em;
 
     img.square, img.vertical {
-      height: min(100vh, calc(100% - 3em * 2));
+      // height: min(100vh, calc(100% - 3em * 2));
     }
 
     img.horizontal {
-      width: min(100vw, calc(100% - 3em * 2));;
+      // width: min(100vw, calc(100% - 3em * 2));;
     }
   }
 

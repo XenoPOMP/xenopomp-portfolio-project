@@ -50,7 +50,17 @@ const ProjectView: FC<ProjectViewProps> = ({
       {...props}
     >
       <div className={cn(styles.photoBlock)}>
-        {image && <Image src={image.src} alt={image.alt} />}
+        {image && (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            className={cn(
+              image.orientation === 'square' && styles.square,
+              image.orientation === 'vertical' && styles.vertical,
+              image.orientation === 'horizontal' && styles.horizontal
+            )}
+          />
+        )}
       </div>
 
       <div className={cn(styles.textBlock)}>

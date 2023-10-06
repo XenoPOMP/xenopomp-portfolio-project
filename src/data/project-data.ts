@@ -1,3 +1,4 @@
+import smartAcePreview from '@/public/previews/smart-ace-preview.png';
 import { IProject } from '@/src/interfaces/IProject';
 import sortProjects from '@/src/utils/sortProjects';
 
@@ -23,6 +24,11 @@ const projectData: IProject[] = sortProjects([
         content: 'Исход. код',
         href: 'https://github.com/XenoPOMP/coursework-2023',
       },
+    },
+    image: {
+      src: smartAcePreview,
+      alt: 'Сайт SmartAce',
+      orientation: 'square',
     },
   },
 
