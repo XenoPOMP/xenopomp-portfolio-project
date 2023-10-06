@@ -1,0 +1,23 @@
+button.uiButton {
+  @apply bg-btn-primary text-btn-secondary
+         border-btn-primary;
+
+  font-size: 1em; // 1em = 20px
+  padding: .75em 1.5em;
+  border-radius: .2em;
+  cursor: pointer;
+  border-width: 1px;
+
+  &.secondary {
+    $easing: .15s ease;
+
+    @apply bg-opacity-0 text-btn-primary;
+
+    transition: background-color $easing,
+                color $easing;
+
+    &:hover {
+      @apply bg-opacity-100 text-btn-secondary;
+    }
+  }
+}

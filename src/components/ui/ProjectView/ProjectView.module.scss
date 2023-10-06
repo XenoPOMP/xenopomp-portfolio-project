@@ -4,8 +4,58 @@ article.projectView {
   display: grid;
   grid-template-columns: var(--preview-width) 1fr;
   gap: calc(var(--margin) * 2);
+  font-size: 1em; // 1em = 20px
+
+  .photoBlock {
+    @apply bg-project-preview-primary;
+
+    width: 100%;
+    aspect-ratio: 541 / 460.6;
+    align-self: center;
+  }
+
+  .textBlock {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 2.25em;
+
+    header.titleBlock {
+      @apply flex flex-col gap-[1.5em];
+
+      h2 {
+        @apply font-medium;
+
+        font-size: 1.75em;
+      }
+
+      .body {
+        @apply text-font-secondary
+               flex flex-col gap-[1em];
+
+        line-height: 150%;
+      }
+    }
+
+    footer.buttonBlock {
+      @apply flex gap-[1.5em];
+    }
+  }
 
   &.reversed {
     grid-template-columns: 1fr var(--preview-width);
+
+    .photoBlock {
+      grid-column-start: 2;
+    }
+
+    .textBlock {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      justify-content: center;
+      align-items: end;
+      text-align: end;
+    }
   }
 }
