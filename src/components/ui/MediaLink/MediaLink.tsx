@@ -59,6 +59,7 @@ const MediaLink: FC<MediaLinkProps> = ({
   return (
     <Link
       className={cn(styles.mediaLink, stylesDict[variant].className, className)}
+      target={'_blank'}
       {...props}
     >
       {icon ? iconDict[icon] : '?'}
