@@ -1,0 +1,39 @@
+@import "src/styles/templates";
+
+a.mediaLink {
+  $easing: .15s ease;
+
+  @extend %flexCenter;
+
+  @apply bg-social-media-bg text-social-media-icon-inactive;
+
+  padding: .25em;
+  height: 2em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition: color $easing;
+
+  // Delete it?
+  font-size: 1rem;
+
+  &:hover {
+    @apply text-social-media-icon;
+  }
+
+  &.footerLike {
+    @apply bg-opacity-0 text-footer-secondary text-opacity-75;
+
+    &:hover {
+      @apply text-opacity-100;
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+
+    path {
+      transition: fill $easing;
+    }
+  }
+}

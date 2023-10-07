@@ -4,6 +4,7 @@ import { FC } from 'react';
 import Emoji from 'react-ios-emojis';
 
 import avatarPlaceholderImg from '@/public/arts/avatar-placeholder.png';
+import SocialMediaLinks from '@/src/components/ui/SocialMediaLinks/SocialMediaLinks';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 
 import styles from './AboutMeSection.module.scss';
@@ -27,6 +28,8 @@ const AboutMeSection: FC<AboutMeSectionProps> = ({}) => {
           Front-end разработчик с опытом работы в React, TypeScript, NextJS и в
           других технологиях. Я всегда ищу новые задачи для решения.
         </desc>
+
+        <SocialMediaLinks />
       </article>
 
       <article className={cn(styles.part, styles.rightPart)}>
