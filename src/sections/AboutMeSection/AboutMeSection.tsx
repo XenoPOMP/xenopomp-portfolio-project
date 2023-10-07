@@ -33,7 +33,7 @@ const AboutMeSection: FC<AboutMeSectionProps> = ({}) => {
       </article>
 
       <article className={cn(styles.part, styles.rightPart)}>
-        <Image src={avatarPlaceholderImg} alt={'Это я :)'} />
+        <Image src={avatarPlaceholderImg} alt={'Это я :)'} priority={true} />
       </article>
     </UiContainer>
   );
