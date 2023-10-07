@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 import MobileMenu from '@/src/components/layout/MobileMenu/MobileMenu';
+import Logotype from '@/src/components/ui/Logotype/Logotype';
 import Navbar from '@/src/components/ui/Navbar/Navbar';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 import SFMono from '@/src/fonts/sf-mono-font';
@@ -16,9 +17,7 @@ const Header: FC<HeaderProps> = ({}) => {
   return (
     <header className={cn(font.className, styles.appHeader)}>
       <UiContainer className={cn(styles.container)}>
-        <Link href={'/'} className={cn('font-bold', styles.logo)}>
-          xeno.pomp
-        </Link>
+        <Logotype />
 
         <Navbar className={cn(styles.desktop)} />
 

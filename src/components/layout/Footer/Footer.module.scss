@@ -1,1 +1,12 @@
-footer.appFooter {}
+footer.appFooter {
+  @apply bg-footer-primary text-footer-secondary;
+
+  font-size: 1rem; // 1em = 20px
+
+  section.container {
+    @apply flex justify-between;
+
+    padding-top: calc(var(--margin) / 2);
+    padding-bottom: calc(var(--margin) / 2);
+  }
+}

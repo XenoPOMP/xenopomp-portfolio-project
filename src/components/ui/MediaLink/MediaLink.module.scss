@@ -23,6 +23,9 @@ a.mediaLink {
   &.footerLike {
     @apply bg-opacity-0 text-footer-secondary text-opacity-75;
 
+    // height: 1.5em;
+    // padding: 0;
+
     &:hover {
       @apply text-opacity-100;
     }
