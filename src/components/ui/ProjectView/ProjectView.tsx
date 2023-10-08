@@ -1,5 +1,8 @@
+'use client';
+
 import { isUndefined } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FC } from 'react';
 import { util } from 'zod';
@@ -45,8 +48,23 @@ const ProjectView: FC<ProjectViewProps> = ({
   };
 
   return (
-    <article
+    <motion.article
       className={cn(styles.projectView, reversed && styles.reversed, className)}
+      initial={{
+        opacity: 0,
+        x: !reversed ? '-50%' : '50%',
+      }}
+      whileInView={{
+        opacity: 1,
+        x: '0',
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 1,
+        ease: 'anticipate',
+      }}
       {...props}
     >
       <div className={cn(styles.photoBlock)}>
@@ -93,7 +111,7 @@ const ProjectView: FC<ProjectViewProps> = ({
           )}
         </footer>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

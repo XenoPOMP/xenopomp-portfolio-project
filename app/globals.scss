@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-primary text-font-primary scroll-smooth;
+  @apply bg-primary text-font-primary scroll-smooth overflow-x-hidden;
 }
 
 :root {
