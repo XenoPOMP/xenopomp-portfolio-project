@@ -1,4 +1,5 @@
 import advancedTypesPreview from '@/public/previews/advanced-types-preview.png';
+import cubeVistaPreview from '@/public/previews/cube-vista-preview.png';
 import imageGrabberExtensionPreview from '@/public/previews/image-grabber-preview.png';
 import oldubilExtPreview from '@/public/previews/oldubil-ext-preview.png';
 import ptPlatinumPreview from '@/public/previews/pt-platinum-preview.png';
@@ -6,6 +7,27 @@ import smartAcePreview from '@/public/previews/smart-ace-preview.png';
 import wepPegasTwoPreview from '@/public/previews/web-pegas-2.0-preview.png';
 import { IProject } from '@/src/interfaces/IProject';
 import sortProjects from '@/src/utils/sortProjects';
+
+const generateLinks = {
+  website: (props: {
+    siteAddress: string;
+    repo: string;
+  }): Required<IProject['links']> => {
+    const { siteAddress, repo } = props;
+
+    return {
+      primary: {
+        content: 'Посетить сайт',
+        href: siteAddress,
+      },
+
+      secondary: {
+        content: 'Исход. код',
+        href: repo,
+      },
+    };
+  },
+};
 
 const projectData: IProject[] = sortProjects([
   {
@@ -139,7 +161,7 @@ const projectData: IProject[] = sortProjects([
 
   {
     title: 'Сайт Pizza Tower Platinum',
-    priority: 'high',
+    priority: 'medium',
     description: [
       'Однажды я захотел пройти игру Pizza Tower на все достижения. Поэтому я создал сайт, на котором я бы мог отслеживать свой прогресс в прохождении игры на платину, а также посмотреть условия выполнения неполученных достижений.',
     ],
@@ -161,6 +183,29 @@ const projectData: IProject[] = sortProjects([
     image: {
       src: ptPlatinumPreview,
       alt: 'Сайт Pizza Tower',
+      orientation: 'square',
+    },
+  },
+
+  {
+    title: 'Лендинг для Cube Vista (Minecraft сервер)',
+    priority: 'high',
+    description: [
+      'Cube Vista - сервер по Майнкрафту, который я планировал создать.',
+      'На главной странице сайта имеется возможность посмотреть, онлайн ли сейчас сервер, или нет.',
+    ],
+    madeOn: {
+      next: true,
+    },
+    links: {
+      ...generateLinks.website({
+        siteAddress: 'https://cube-vista-landing.vercel.app',
+        repo: 'https://github.com/XenoPOMP/cube-vista-landing',
+      }),
+    },
+    image: {
+      src: cubeVistaPreview,
+      alt: 'Лендинг для Cube Vista',
       orientation: 'square',
     },
   },

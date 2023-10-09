@@ -209,7 +209,8 @@ const ProjectView: FC<ProjectViewProps> = ({
 
             <div
               className={cn(
-                'text-font-third-rate flex flex-wrap gap-[.5em] items-center'
+                'text-font-third-rate flex flex-wrap gap-[.5em] items-center',
+                reversed && 'justify-end'
               )}
             >
               <span>Сделан на:</span>
