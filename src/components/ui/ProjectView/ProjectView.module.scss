@@ -76,6 +76,14 @@ article.projectView {
                flex flex-col gap-[1em];
 
         line-height: 150%;
+
+        svg.icon {
+          height: 1.5em;
+
+          path {
+            // fill: currentColor;
+          }
+        }
       }
     }
 
