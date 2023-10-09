@@ -12,7 +12,7 @@ import type { AboutMeSectionProps } from './AboutMeSection.props';
 
 const AboutMeSection: FC<AboutMeSectionProps> = ({}) => {
   return (
-    <UiContainer className={cn(styles.aboutMe)}>
+    <UiContainer className={cn(styles.aboutMe)} id={'about-me'}>
       <article className={cn(styles.part, styles.leftPart)}>
         <header>
           <h1>
