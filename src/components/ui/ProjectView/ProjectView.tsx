@@ -188,7 +188,7 @@ const ProjectView: FC<ProjectViewProps> = ({
     }
 
     return (
-      <div className={cn('flex flex-wrap gap-[.3em] items-center')}>
+      <div className={cn('flex flex-wrap gap-[.4em] items-center')}>
         {selectedTechnologies.map(tech => (
           <>
             <div
@@ -202,11 +202,6 @@ const ProjectView: FC<ProjectViewProps> = ({
             <Tooltip
               id={`${tech.title}-tooltip`}
               className={cn('bg-tooltip-bg text-tooltip-font bg-opacity-100')}
-              style={
-                {
-                  // backgroundColor: 'red',
-                }
-              }
             />
           </>
         ))}
