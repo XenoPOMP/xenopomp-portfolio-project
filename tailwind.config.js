@@ -22,6 +22,8 @@ module.exports = {
         'btn-secondary': '#FFFFFF',
         'footer-primary': '#000000',
         'footer-secondary': '#FFFFFF',
+        'tooltip-bg': '#000000',
+        'tooltip-font': '#FFFFFF',
       },
 
       backgroundImage: {

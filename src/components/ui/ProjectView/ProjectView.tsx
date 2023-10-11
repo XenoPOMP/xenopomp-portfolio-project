@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';
+import { Tooltip } from 'react-tooltip';
 import { util } from 'zod';
 
 import Button from '@/src/components/ui/Button/Button';
@@ -24,13 +25,12 @@ const ProjectView: FC<ProjectViewProps> = ({
   const { title, description, madeOn, links, image } = project;
 
   const getMadeOnString = (): ReactNode => {
-    const outputStrings: Record<
-      StackTechnology,
-      {
-        component: ReactNode;
-        title: ReactNode;
-      }
-    > = {
+    type Tech = {
+      component: ReactNode;
+      title: string;
+    };
+
+    const outputStrings: Record<StackTechnology, Tech> = {
       react: {
         component: (
           <svg
@@ -141,14 +141,14 @@ const ProjectView: FC<ProjectViewProps> = ({
       },
     };
 
-    const selectedTechnologies: ReactNode[] = [];
+    const selectedTechnologies: Array<Tech> = [];
 
     if (!isUndefined(madeOn)) {
       objectKeys(madeOn).map(key => {
         const objectKey = key as keyof typeof madeOn;
 
         if (madeOn[objectKey]) {
-          selectedTechnologies.push(outputStrings[objectKey].component);
+          selectedTechnologies.push(outputStrings[objectKey]);
         }
       });
     }
@@ -156,7 +156,25 @@ const ProjectView: FC<ProjectViewProps> = ({
     return (
       <div className={cn('flex flex-wrap gap-[.3em] items-center')}>
         {selectedTechnologies.map(tech => (
-          <div>{tech}</div>
+          <>
+            <div
+              data-tooltip-id={`${tech.title}-tooltip`}
+              data-tooltip-content={tech.title}
+              data-tooltip-place='bottom'
+            >
+              {tech.component}
+            </div>
+
+            <Tooltip
+              id={`${tech.title}-tooltip`}
+              className={cn('bg-tooltip-bg text-tooltip-font bg-opacity-100')}
+              style={
+                {
+                  // backgroundColor: 'red',
+                }
+              }
+            />
+          </>
         ))}
       </div>
     );
