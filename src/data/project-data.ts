@@ -40,6 +40,7 @@ const projectData: IProject[] = sortProjects([
     madeOn: {
       react: true,
       vite: true,
+      redux: true,
     },
     links: {
       primary: {
@@ -67,6 +68,7 @@ const projectData: IProject[] = sortProjects([
     ],
     madeOn: {
       next: true,
+      redux: true,
     },
     links: {
       primary: {
@@ -122,6 +124,7 @@ const projectData: IProject[] = sortProjects([
       react: true,
       vite: true,
       'chrome-api': true,
+      redux: true,
     },
     links: {
       secondary: {
@@ -145,6 +148,7 @@ const projectData: IProject[] = sortProjects([
       react: true,
       vite: true,
       'chrome-api': true,
+      redux: true,
     },
     links: {
       secondary: {
@@ -168,6 +172,7 @@ const projectData: IProject[] = sortProjects([
     madeOn: {
       react: true,
       vite: true,
+      redux: true,
     },
     links: {
       primary: {
@@ -196,6 +201,7 @@ const projectData: IProject[] = sortProjects([
     ],
     madeOn: {
       next: true,
+      redux: true,
     },
     links: {
       ...generateLinks.website({

@@ -9,7 +9,9 @@ export type StackTechnology =
   | 'vite'
   | 'next'
   | 'chrome-api'
-  | 'typescript';
+  | 'typescript'
+  | 'redux'
+  | 'zustand';
 
 export interface IProject {
   priority?: ProjectPriority;
