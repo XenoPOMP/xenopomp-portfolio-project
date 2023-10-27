@@ -3,6 +3,7 @@ import cubeVistaPreview from '@/public/previews/cube-vista-preview.png';
 import imageGrabberExtensionPreview from '@/public/previews/image-grabber-preview.png';
 import oldubilExtPreview from '@/public/previews/oldubil-ext-preview.png';
 import ptPlatinumPreview from '@/public/previews/pt-platinum-preview.png';
+import shopGuidePreview from '@/public/previews/shop-guide-preview.png';
 import smartAcePreview from '@/public/previews/smart-ace-preview.png';
 import wepPegasTwoPreview from '@/public/previews/web-pegas-2.0-preview.png';
 import { IProject } from '@/src/interfaces/IProject';
@@ -212,6 +213,30 @@ const projectData: IProject[] = sortProjects([
     image: {
       src: cubeVistaPreview,
       alt: 'Лендинг для Cube Vista',
+      orientation: 'square',
+    },
+  },
+
+  {
+    title: 'Лендинг для ShopGuide',
+    priority: 'medium',
+    description: [
+      'Тестовое задание в компанию Перцы (Ярославль).',
+      'Особенностью этого проекта является скорость его написания - всего 2 дня.',
+    ],
+    madeOn: {
+      next: true,
+      zustand: true,
+    },
+    links: {
+      ...generateLinks.website({
+        siteAddress: 'https://peppers-test-landing.vercel.app',
+        repo: 'https://github.com/XenoPOMP/peppers-test-landing',
+      }),
+    },
+    image: {
+      src: shopGuidePreview,
+      alt: 'Лендинг для ShopGuide',
       orientation: 'square',
     },
   },
