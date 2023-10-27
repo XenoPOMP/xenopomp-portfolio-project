@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body,
+html {
+  overflow-x: hidden !important;
+}
+
 body {
-  @apply bg-primary text-font-primary scroll-smooth overflow-x-hidden;
+  @apply bg-primary text-font-primary scroll-smooth;
 }
 
 :root {
