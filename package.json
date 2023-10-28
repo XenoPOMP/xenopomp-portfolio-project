@@ -3,6 +3,7 @@
   "version": "0.3.2",
   "private": true,
   "author": "XenoPOMP",
+  "description": "Hello, my name is Alexander. I`m front-end developer. I`m specializing in React, TypeScript and Next.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
