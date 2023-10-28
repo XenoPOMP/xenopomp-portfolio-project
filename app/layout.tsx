@@ -31,6 +31,9 @@ export const metadata: Metadata = {
       },
     ],
     title: 'Портфолио XenoPOMP',
+    description:
+      'Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.',
+    url: process.env.CANONICAL_URL,
   },
 };
 
