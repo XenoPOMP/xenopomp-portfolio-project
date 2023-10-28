@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       },
     ],
     siteName: 'XenoPOMP',
+    type: 'website',
     title: 'Портфолио XenoPOMP',
     description:
       'Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.',
