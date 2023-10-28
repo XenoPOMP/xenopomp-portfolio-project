@@ -30,6 +30,7 @@ export const metadata: Metadata = {
         url: ogImage.src,
       },
     ],
+    siteName: 'XenoPOMP',
     title: 'Портфолио XenoPOMP',
     description:
       'Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.',
