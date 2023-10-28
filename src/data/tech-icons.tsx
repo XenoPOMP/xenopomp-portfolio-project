@@ -72,7 +72,7 @@ const techIcons: Record<StackTechnology, Tech> = {
         </defs>
       </svg>
     ),
-    title: 'Next.js',
+    title: 'Next 13',
   },
   'chrome-api': {
     component: (
