@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 import { AppConstants } from '@/app/app.constants';
-import ogImage from '@/public/arts/OG Image.png';
+// import ogImage from '@/public/arts/OG Image.png';
+import ogImage from '@/public/arts/OpenGraph image Small.png.png';
 import Footer from '@/src/components/layout/Footer/Footer';
 import Header from '@/src/components/layout/Header/Header';
 import Providers from '@/src/components/layout/Providers/Providers';
