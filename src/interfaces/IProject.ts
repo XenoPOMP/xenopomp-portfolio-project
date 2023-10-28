@@ -8,6 +8,7 @@ export type StackTechnology =
   | 'react'
   | 'vite'
   | 'next'
+  | 'next14'
   | 'chrome-api'
   | 'typescript'
   | 'redux'
