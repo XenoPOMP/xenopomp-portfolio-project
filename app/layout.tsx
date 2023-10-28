@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 import { AppConstants } from '@/app/app.constants';
+import ogImage from '@/public/arts/OG Image placeholder.webp';
 import Footer from '@/src/components/layout/Footer/Footer';
 import Header from '@/src/components/layout/Header/Header';
 import Providers from '@/src/components/layout/Providers/Providers';
@@ -23,6 +24,14 @@ export const metadata: Metadata = {
     'next',
     'портфолио',
   ],
+  openGraph: {
+    images: [
+      {
+        url: ogImage.src,
+      },
+    ],
+    title: 'Портфолио XenoPOMP',
+  },
 };
 
 export default function RootLayout({
