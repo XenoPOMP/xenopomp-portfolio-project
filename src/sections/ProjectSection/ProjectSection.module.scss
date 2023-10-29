@@ -10,4 +10,8 @@ section.projects {
   @media (max-width: 906px) {
     font-size: .75rem;
   }
+
+  a.allProjects {
+    transition: .15s ease color;
+  }
 }
