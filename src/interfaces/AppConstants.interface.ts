@@ -1,4 +1,4 @@
-import { DeepPartial, Defined, Modify } from '@xenopomp/advanced-types';
+import { Defined, Modify } from '@xenopomp/advanced-types';
 import { Metadata } from 'next';
 
 /**
