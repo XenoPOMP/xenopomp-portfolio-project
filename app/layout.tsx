@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { OpenGraphType } from 'next/dist/lib/metadata/types/opengraph-types';
 import Script from 'next/script';
 
 import { AppConstants } from '@/app/app.constants';
@@ -26,12 +27,10 @@ export const metadata: Metadata = {
     'портфолио',
   ],
   openGraph: {
+    ...AppConstants.sharedOpenGraphConfig,
+
     images: [
-      {
-        url: ogSquareImage.src,
-        width: 200,
-        height: 200,
-      },
+      ...(AppConstants.sharedOpenGraphConfig?.images ?? []),
       {
         url: ogImage.src,
         width: 1080,
@@ -39,13 +38,10 @@ export const metadata: Metadata = {
         alt: 'XenoPOMP Портфолио',
       },
     ],
-    siteName: 'XenoPOMP',
     type: 'website',
     title: 'Портфолио XenoPOMP',
     description:
       'Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.',
-    url: process.env.CANONICAL_URL,
-    locale: 'ru_RU',
   },
 };
 
