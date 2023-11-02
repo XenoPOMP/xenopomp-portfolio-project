@@ -3,6 +3,7 @@ import Script from 'next/script';
 
 import { AppConstants } from '@/app/app.constants';
 import ogImage from '@/public/arts/OpenGraph image Medium.png';
+import ogSquareImage from '@/public/arts/OpenGraph image Square.png';
 import Footer from '@/src/components/layout/Footer/Footer';
 import Header from '@/src/components/layout/Header/Header';
 import Providers from '@/src/components/layout/Providers/Providers';
@@ -28,6 +29,13 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImage.src,
+        width: 1080,
+        height: 608,
+      },
+      {
+        url: ogSquareImage.src,
+        width: 200,
+        height: 200,
       },
     ],
     siteName: 'XenoPOMP',
