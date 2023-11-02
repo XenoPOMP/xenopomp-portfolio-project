@@ -32,11 +32,11 @@ export const metadata: Metadata = {
         width: 1080,
         height: 608,
       },
-      {
-        url: ogSquareImage.src,
-        width: 200,
-        height: 200,
-      },
+      // {
+      //   url: ogSquareImage.src,
+      //   width: 200,
+      //   height: 200,
+      // },
     ],
     siteName: 'XenoPOMP',
     type: 'website',
