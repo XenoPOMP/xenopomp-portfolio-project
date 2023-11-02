@@ -28,15 +28,16 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
+        url: ogSquareImage.src,
+        width: 200,
+        height: 200,
+      },
+      {
         url: ogImage.src,
         width: 1080,
         height: 608,
+        alt: 'XenoPOMP Портфолио',
       },
-      // {
-      //   url: ogSquareImage.src,
-      //   width: 200,
-      //   height: 200,
-      // },
     ],
     siteName: 'XenoPOMP',
     type: 'website',
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
     description:
       'Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.',
     url: process.env.CANONICAL_URL,
+    locale: 'ru_RU',
   },
 };
 
