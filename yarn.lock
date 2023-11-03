@@ -522,10 +522,10 @@
   resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
   integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
 
-"@xenopomp/advanced-types@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@xenopomp/advanced-types/-/advanced-types-1.3.3.tgz#98bf3a8c24a01f319c6bc29eec15f215c510569f"
-  integrity sha512-Ja4MoOuZXfpc403ZkBj+kUQifXh+yD0h7hGtn4luPbXFiUfH+u94bqL+4zIfzWkHM7Hze7ZGPTOHtcMFi78dFQ==
+"@xenopomp/advanced-types@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@xenopomp/advanced-types/-/advanced-types-1.3.4.tgz#a6730152114de264462a9d71c54c19d295259dd3"
+  integrity sha512-Y4dYpbT8OTuK0VWjHxPzwZ2zZyNnt9TUce4Rn1s2k/at6S+HBWQ9q+bvjB7NEZtuvL5b8utCljETCfOXqljFhQ==
   dependencies:
     next "14.0.0"
     react "^18.2.0"
