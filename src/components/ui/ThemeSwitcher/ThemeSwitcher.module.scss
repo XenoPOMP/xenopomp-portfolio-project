@@ -1,0 +1,36 @@
+@import "src/styles/templates";
+
+.themeSwitcher {
+  --icon-size: 1.75em;
+  --icon-padding: calc(var(--icon-size) * .192);
+  --icon-rounding: calc(var(--icon-size) * .115);
+
+  // SWITCHER IS DISABLED.
+  // TODO: Fix TW themes to use this.
+  display: none;
+
+  @extend %flexCenter;
+
+  @apply text-font-primary;
+
+  height: var(--icon-size);
+  padding: var(--icon-padding);
+  aspect-ratio: 1;
+  border-radius: var(--icon-rounding);
+
+  transition: .15s ease scale, .08s ease color,
+              .08s ease background-color;
+
+  &:active {
+    scale: .95;
+  }
+
+  &:hover {
+    @apply bg-highlight text-highlight-font;
+  }
+
+  svg.icon {
+    width: 100%;
+    height: 100%;
+  }
+}

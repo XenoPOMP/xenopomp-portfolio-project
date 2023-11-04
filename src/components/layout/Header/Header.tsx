@@ -5,6 +5,7 @@ import { FC } from 'react';
 import MobileMenu from '@/src/components/layout/MobileMenu/MobileMenu';
 import Logotype from '@/src/components/ui/Logotype/Logotype';
 import Navbar from '@/src/components/ui/Navbar/Navbar';
+import ThemeSwitcher from '@/src/components/ui/ThemeSwitcher/ThemeSwitcher';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 import SFMono from '@/src/fonts/sf-mono-font';
 
@@ -19,7 +20,11 @@ const Header: FC<HeaderProps> = ({}) => {
       <UiContainer className={cn(styles.container)}>
         <Logotype />
 
-        <Navbar className={cn(styles.desktop)} />
+        <article className={cn('flex gap-[2em] items-center')}>
+          <Navbar className={cn(styles.desktop)} />
+
+          <ThemeSwitcher className={cn(styles.desktop)} />
+        </article>
 
         <MobileMenu className={cn(styles.mobile)} />
       </UiContainer>
