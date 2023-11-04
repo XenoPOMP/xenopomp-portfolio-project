@@ -1,13 +1,18 @@
 @import "src/styles/templates";
 
 .themeSwitcher {
+  --icon-size: 1.75em;
+  --icon-padding: calc(var(--icon-size) * .192);
+  --icon-rounding: calc(var(--icon-size) * .115);
+
   @extend %flexCenter;
 
-  @apply p-[.25em] text-font-primary;
+  @apply text-font-primary;
 
-  height: 1.5em;
+  height: var(--icon-size);
+  padding: var(--icon-padding);
   aspect-ratio: 1;
-  border-radius: .15em;
+  border-radius: var(--icon-rounding);
 
   transition: .15s ease scale, .08s ease color,
               .08s ease background-color;
