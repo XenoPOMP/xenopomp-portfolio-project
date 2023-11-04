@@ -1,0 +1,14 @@
+@import "src/styles/templates";
+
+section.loadingOverlay {
+  @extend %flexCenter;
+
+  @apply text-highlight bg-primary;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 9000;
+}
