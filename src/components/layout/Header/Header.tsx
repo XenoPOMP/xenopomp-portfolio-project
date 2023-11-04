@@ -23,7 +23,7 @@ const Header: FC<HeaderProps> = ({}) => {
         <article className={cn('flex gap-[2em] items-center')}>
           <Navbar className={cn(styles.desktop)} />
 
-          <ThemeSwitcher />
+          <ThemeSwitcher className={cn(styles.desktop)} />
         </article>
 
         <MobileMenu className={cn(styles.mobile)} />
