@@ -1,0 +1,27 @@
+@import "src/styles/templates";
+
+.themeSwitcher {
+  @extend %flexCenter;
+
+  @apply p-[.25em] text-font-primary;
+
+  height: 1.3em;
+  aspect-ratio: 1;
+  border-radius: .15em;
+
+  transition: .15s ease scale, .08s ease color,
+              .08s ease background-color;
+
+  &:active {
+    scale: .95;
+  }
+
+  &:hover {
+    @apply bg-highlight text-highlight-font;
+  }
+
+  svg.icon {
+    width: 100%;
+    height: 100%;
+  }
+}

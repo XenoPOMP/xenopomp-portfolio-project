@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         primary: '#FFFFFF',
         highlight: '#2678C2',
+        'highlight-font': 'rgba(255 255 255 / 1)',
         'nav-highlight': 'rgb(34 197 94)',
         'social-media-bg': '#E1E1E1',
         'social-media-icon': '#5E5E5E',
