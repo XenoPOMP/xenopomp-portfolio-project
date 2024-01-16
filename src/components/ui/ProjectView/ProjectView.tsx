@@ -92,6 +92,7 @@ const ProjectView: FC<ProjectViewProps> = ({
               image.orientation === 'vertical' && styles.vertical,
               image.orientation === 'horizontal' && styles.horizontal
             )}
+            priority={false}
           />
         )}
       </div>
