@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { ComponentProps } from 'react';
+
 import advancedTypesPreview from '@/public/previews/advanced-types-preview.png';
 import cubeVistaPreview from '@/public/previews/cube-vista-preview.png';
 import imageGrabberExtensionPreview from '@/public/previews/image-grabber-preview.png';
@@ -25,6 +28,19 @@ const generateLinks = {
       secondary: {
         content: 'Исход. код',
         href: repo,
+      },
+    };
+  },
+
+  sourceCodeOnly: ({
+    repo: href,
+  }: {
+    repo: ComponentProps<typeof Link>['href'];
+  }): IProject['links'] => {
+    return {
+      secondary: {
+        content: 'Исход. код',
+        href,
       },
     };
   },
@@ -232,6 +248,27 @@ const projectData: IProject[] = sortProjects([
       ...generateLinks.website({
         siteAddress: 'https://peppers-test-landing.vercel.app',
         repo: 'https://github.com/XenoPOMP/peppers-test-landing',
+      }),
+    },
+    image: {
+      src: shopGuidePreview,
+      alt: 'Лендинг для ShopGuide',
+      orientation: 'square',
+    },
+  },
+
+  {
+    title: 'Game Size Tracker',
+    description: [
+      'Game Size Tracker - программа, которая позволяет вам отследить, сколько весят все установленные на вашем ПК игры.',
+    ],
+    madeOn: {
+      react: true,
+      redux: true,
+    },
+    links: {
+      ...generateLinks.sourceCodeOnly({
+        repo: 'https://github.com/XenoPOMP/game-size-tracker',
       }),
     },
     image: {
