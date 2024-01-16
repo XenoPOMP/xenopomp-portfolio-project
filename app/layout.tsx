@@ -62,7 +62,7 @@ export default function RootLayout({
           <Footer />
 
           {/* Disable Metrika in dev environment. */}
-          {!process.env.METRIKA_DISABLED && <Metrika id={95183872} />}
+          <Metrika id={95183872} />
         </Providers>
       </body>
     </html>
