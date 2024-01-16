@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { Unbounded } from 'next/font/google';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -12,7 +13,9 @@ import SFMono from '@/src/fonts/sf-mono-font';
 import styles from './Header.module.scss';
 import type { HeaderProps } from './Header.props';
 
-const font = SFMono;
+// const font = SFMono;
+
+const font = Unbounded({ subsets: ['latin', 'cyrillic'] });
 
 const Header: FC<HeaderProps> = ({}) => {
   return (

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Metrika from 'next-metrika';
 import { OpenGraphType } from 'next/dist/lib/metadata/types/opengraph-types';
+import { Geologica } from 'next/font/google';
 import Script from 'next/script';
 
 import { AppConstants } from '@/app/app.constants';
@@ -13,7 +14,9 @@ import SFProDisplay from '@/src/fonts/sf-pro-display-font';
 
 import './globals.scss';
 
-const mainFont = SFProDisplay;
+// const mainFont = SFProDisplay;
+
+const mainFont = Geologica({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
   title: AppConstants.appName,
