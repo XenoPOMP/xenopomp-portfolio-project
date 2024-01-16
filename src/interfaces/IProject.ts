@@ -12,7 +12,8 @@ export type StackTechnology =
   | 'chrome-api'
   | 'typescript'
   | 'redux'
-  | 'zustand';
+  | 'zustand'
+  | 'electron';
 
 export interface IProject {
   priority?: ProjectPriority;

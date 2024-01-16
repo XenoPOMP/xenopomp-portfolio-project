@@ -265,6 +265,7 @@ const projectData: IProject[] = sortProjects([
     madeOn: {
       react: true,
       redux: true,
+      electron: true,
     },
     links: {
       ...generateLinks.sourceCodeOnly({
