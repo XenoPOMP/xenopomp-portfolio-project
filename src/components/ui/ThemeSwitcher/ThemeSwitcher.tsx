@@ -43,7 +43,7 @@ const ThemeSwitcher: VariableFC<
   }, []);
 
   useEffect(() => {
-    const classToAdd = 'dark';
+    const classToAdd = 'dark-theme';
 
     if (isDark && !document.body.classList.contains(classToAdd)) {
       document.body.classList.add(classToAdd);
