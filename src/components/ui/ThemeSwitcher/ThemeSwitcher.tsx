@@ -42,6 +42,16 @@ const ThemeSwitcher: VariableFC<
     };
   }, []);
 
+  useEffect(() => {
+    const classToAdd = 'dark';
+
+    if (isDark && !document.body.classList.contains(classToAdd)) {
+      document.body.classList.add(classToAdd);
+    } else if (document.body.classList.contains(classToAdd)) {
+      document.body.classList.remove(classToAdd);
+    }
+  }, [isDark]);
+
   const Icon: FC = () => {
     if (isDark) {
       return (
