@@ -3,6 +3,7 @@ import { ComponentProps } from 'react';
 
 import advancedTypesPreview from '@/public/previews/advanced-types-preview.png';
 import cubeVistaPreview from '@/public/previews/cube-vista-preview.png';
+import gstPreview from '@/public/previews/gst_preview.png';
 import imageGrabberExtensionPreview from '@/public/previews/image-grabber-preview.png';
 import oldubilExtPreview from '@/public/previews/oldubil-ext-preview.png';
 import ptPlatinumPreview from '@/public/previews/pt-platinum-preview.png';
@@ -261,11 +262,13 @@ const projectData: IProject[] = sortProjects([
     title: 'Game Size Tracker',
     description: [
       'Game Size Tracker - программа, которая позволяет вам отследить, сколько весят все установленные на вашем ПК игры.',
+      'В этом приложении я впервые смог реализовать смену тем в десктопном приложении на React + Vite + Electron',
     ],
     madeOn: {
       react: true,
-      redux: true,
+      vite: true,
       electron: true,
+      redux: true,
     },
     links: {
       ...generateLinks.sourceCodeOnly({
@@ -273,9 +276,9 @@ const projectData: IProject[] = sortProjects([
       }),
     },
     image: {
-      src: shopGuidePreview,
-      alt: 'Лендинг для ShopGuide',
-      orientation: 'square',
+      src: gstPreview,
+      alt: 'Game Size Tracker',
+      orientation: 'horizontal',
     },
   },
 ]);
