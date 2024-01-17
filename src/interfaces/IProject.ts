@@ -13,7 +13,8 @@ export type StackTechnology =
   | 'typescript'
   | 'redux'
   | 'zustand'
-  | 'electron';
+  | 'electron'
+  | 'expo';
 
 export interface IProject {
   priority?: ProjectPriority;
