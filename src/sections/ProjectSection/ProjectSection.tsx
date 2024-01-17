@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 
 import ProjectView from '@/src/components/ui/ProjectView/ProjectView';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
@@ -27,35 +27,37 @@ const ProjectSection: FC<ProjectSectionProps> = ({
   })();
 
   return (
-    <UiContainer
-      className={cn(styles.projects, className)}
-      id={id ?? 'projects'}
-      {...props}
-    >
-      {displayingProjects.map((project, index) => {
-        return (
-          <ProjectView
-            project={project}
-            key={`project-view-${index}`}
-            reversed={!(index % 2 === 0)}
-          />
-        );
-      })}
+    <>
+      <UiContainer
+        className={cn(styles.projects, className)}
+        id={id ?? 'projects'}
+        {...props}
+      >
+        {displayingProjects.map((project, index) => {
+          return (
+            <ProjectView
+              project={project}
+              key={`project-view-${index}`}
+              reversed={!(index % 2 === 0)}
+            />
+          );
+        })}
 
-      {hasMoreLink && (
-        <>
-          <Link
-            href={'/projects'}
-            className={cn(
-              'text-center text-[1.25em] text-font-primary hover:text-highlight',
-              styles.allProjects
-            )}
-          >
-            Все проекты
-          </Link>
-        </>
-      )}
-    </UiContainer>
+        {hasMoreLink && (
+          <>
+            <Link
+              href={'/projects'}
+              className={cn(
+                'text-center text-[1.25em] text-font-primary hover:text-highlight',
+                styles.allProjects
+              )}
+            >
+              Все проекты
+            </Link>
+          </>
+        )}
+      </UiContainer>
+    </>
   );
 };
 
