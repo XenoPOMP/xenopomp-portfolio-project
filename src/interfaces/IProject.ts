@@ -18,7 +18,7 @@ export type StackTechnology =
   | 'electron'
   | 'expo';
 
-export type BackendStackTechnology = 'nest';
+export type BackendStackTechnology = 'nest' | 'prisma';
 
 export interface IProject {
   priority?: ProjectPriority;
