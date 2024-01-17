@@ -48,6 +48,7 @@ const ProjectView: FC<ProjectViewProps> = ({
               data-tooltip-id={`${title}-tooltip`}
               data-tooltip-content={title}
               data-tooltip-place='bottom'
+              className={cn('text-font-primary')}
             >
               {component}
             </div>

@@ -16,6 +16,9 @@ interface IAppConstants {
   sharedOpenGraphConfig: Partial<
     Modify<OpenGraphConfig, 'images', Array<OGImage>>
   >;
+  themeNames: {
+    dark: string;
+  };
 }
 
 export default IAppConstants;

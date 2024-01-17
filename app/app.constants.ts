@@ -16,4 +16,7 @@ export const AppConstants: IAppConstants = {
     url: process.env.CANONICAL_URL,
     locale: 'ru_RU',
   },
+  themeNames: {
+    dark: 'dark-theme',
+  },
 };

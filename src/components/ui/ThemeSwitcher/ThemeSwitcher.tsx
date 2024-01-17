@@ -4,6 +4,7 @@ import { VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
 import { FC, useEffect } from 'react';
 
+import { AppConstants } from '@/app/app.constants';
 import useBoolean from '@/src/hooks/useBoolean';
 
 import styles from './ThemeSwitcher.module.scss';
@@ -43,7 +44,7 @@ const ThemeSwitcher: VariableFC<
   }, []);
 
   useEffect(() => {
-    const classToAdd = 'dark-theme';
+    const classToAdd = AppConstants.themeNames.dark;
 
     if (isDark && !document.body.classList.contains(classToAdd)) {
       document.body.classList.add(classToAdd);
