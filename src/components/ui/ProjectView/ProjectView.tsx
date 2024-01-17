@@ -25,10 +25,13 @@ const ProjectView: FC<ProjectViewProps> = ({
   className,
   ...props
 }) => {
-  const { title, description, madeOn, links, image } = project;
+  const { title, description, madeOn, backendStack, links, image } = project;
 
-  const getMadeOnString = (): ReactNode => {
-    const selectedTechnologies: Array<RecordValue<typeof techIcons>> = [];
+  const getMadeOnString = (
+    payload?: Array<RecordValue<typeof techIcons>>
+  ): ReactNode => {
+    const selectedTechnologies: Array<RecordValue<typeof techIcons>> =
+      payload ?? [];
 
     if (!isUndefined(madeOn)) {
       objectKeys(madeOn).map(key => {

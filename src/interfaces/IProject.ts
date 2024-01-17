@@ -25,7 +25,7 @@ export interface IProject {
   title: string;
   description?: string[];
   madeOn?: Partial<Record<StackTechnology, boolean>>;
-  backend?: Partial<
+  backendStack?: Partial<
     ReplaceRecordKey<NonNullable<IProject['madeOn']>, BackendStackTechnology>
   >;
   links?: Partial<

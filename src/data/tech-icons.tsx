@@ -5,7 +5,10 @@ import { FC, ReactNode } from 'react';
 
 import zustandIconImage from '@/public/icons/Zustand Icon.png';
 import styles from '@/src/components/ui/ProjectView/ProjectView.module.scss';
-import { StackTechnology } from '@/src/interfaces/IProject';
+import {
+  BackendStackTechnology,
+  StackTechnology,
+} from '@/src/interfaces/IProject';
 import { isDarkTheme, useTheme } from '@/src/utils/isDarkTheme';
 
 type Tech = {
