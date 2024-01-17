@@ -12,7 +12,10 @@ type Tech = {
   title: string;
 };
 
-const iconClasses = cn(styles.icon, isDarkTheme && styles.monochrome);
+const iconClasses = cn(
+  styles.icon
+  // isDarkTheme && styles.monochrome
+);
 
 const NextIcon: ReactNode = (
   <>
