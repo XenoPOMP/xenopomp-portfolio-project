@@ -55,7 +55,9 @@ const ProjectView: FC<ProjectViewProps> = ({
 
             <Tooltip
               id={`${title}-tooltip`}
-              className={cn('bg-tooltip-bg text-tooltip-font bg-opacity-100')}
+              className={cn(
+                '!bg-tooltip-bg !text-tooltip-font !bg-opacity-100'
+              )}
             />
           </>
         ))}
