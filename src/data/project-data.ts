@@ -47,11 +47,6 @@ const generateLinks = {
   },
 };
 
-type GenericStack = Record<
-  string,
-  NonNullable<IProject['madeOn']> | NonNullable<IProject['backendStack']>
->;
-
 const genericStack = {
   /** Nest, Prisma */
   nepr: {
@@ -74,6 +69,9 @@ const projectData: IProject[] = sortProjects([
       react: true,
       vite: true,
       redux: true,
+    },
+    backendStack: {
+      nest: true,
     },
     links: {
       primary: {
