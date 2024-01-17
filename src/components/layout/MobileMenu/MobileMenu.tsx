@@ -68,9 +68,9 @@ const MobileMenu: FC<MobileMenuProps> = ({ className, ...props }) => {
               );
             })}
 
-            <Menu.Item as={'li'}>
-              <ThemeSwitcher />
-            </Menu.Item>
+            {/*<Menu.Item as={'li'}>*/}
+            {/*  <ThemeSwitcher />*/}
+            {/*</Menu.Item>*/}
           </Menu.Items>
         </Transition>
       </Menu>
