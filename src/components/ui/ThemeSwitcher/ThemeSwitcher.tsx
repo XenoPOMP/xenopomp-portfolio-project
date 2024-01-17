@@ -14,7 +14,10 @@ const ThemeSwitcher: VariableFC<
   ThemeSwitcherProps,
   'onClick' | 'children'
 > = ({ className, ...props }) => {
-  const [isDark, toggleIsDark, setIsDark] = useBoolean(false);
+  const [isDark, toggleIsDark, setIsDark] = useBoolean(
+    window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
 
   const Icon: FC = () => {
     if (isDark) {
