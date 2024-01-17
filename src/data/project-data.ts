@@ -260,6 +260,7 @@ const projectData: IProject[] = sortProjects([
 
   {
     title: 'Game Size Tracker',
+    priority: 'medium',
     description: [
       'Game Size Tracker - программа, которая позволяет вам отследить, сколько весят все установленные на вашем ПК игры.',
       'В этом приложении я впервые смог реализовать смену тем в десктопном приложении на React + Vite + Electron',
