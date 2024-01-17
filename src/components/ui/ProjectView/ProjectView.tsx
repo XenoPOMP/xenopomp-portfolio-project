@@ -55,6 +55,9 @@ const ProjectView: FC<ProjectViewProps> = ({
 
             <Tooltip
               id={`${title}-tooltip`}
+              style={{
+                borderRadius: '5px',
+              }}
               className={cn(
                 '!bg-tooltip-bg !text-tooltip-font !bg-opacity-100'
               )}
