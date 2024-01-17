@@ -47,6 +47,21 @@ const generateLinks = {
   },
 };
 
+type GenericStack = Record<
+  string,
+  NonNullable<IProject['madeOn']> | NonNullable<IProject['backendStack']>
+>;
+
+const genericStack = {
+  /** Nest, Prisma */
+  nepr: {
+    backendStack: {
+      nest: true,
+      prisma: true,
+    },
+  },
+} satisfies Record<string, Pick<IProject, 'madeOn' | 'backendStack'>>;
+
 const projectData: IProject[] = sortProjects([
   {
     title: 'Вебсайт SmartAce',
@@ -270,9 +285,6 @@ const projectData: IProject[] = sortProjects([
       vite: true,
       electron: true,
       redux: true,
-    },
-    backendStack: {
-      nest: true,
     },
     links: {
       ...generateLinks.sourceCodeOnly({
