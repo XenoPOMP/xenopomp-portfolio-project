@@ -77,19 +77,20 @@ article.projectView {
 
         line-height: 150%;
 
-        svg.icon, img.icon {
-          height: 1.5em;
-
-          &.monochrome {
+        .iconWrapper {
+          &.monochrome svg.icon {
             &[stroke] {
               stroke: currentColor;
             }
 
-            path {
+            path[fill] {
               fill: currentColor;
             }
           }
+        }
 
+        svg.icon, img.icon {
+          height: 1.5em;
 
         }
 
