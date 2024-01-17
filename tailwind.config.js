@@ -11,15 +11,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#FFFFFF',
         highlight: '#2678C2',
-        'highlight-font': 'rgba(255 255 255 / 1)',
-        'nav-highlight': 'rgb(34 197 94)',
+        'highlight-font': '#FFFFFF',
+        primary: '#FFFFFF',
+        'nav-highlight': '#22C55E',
         'social-media-bg': '#E1E1E1',
         'social-media-icon': '#5E5E5E',
-        'social-media-icon-inactive': '#7B7A7A',
+        'social-media-icon-inactive': '#7B7979',
         'font-primary': '#000000',
-        'font-secondary': '#767575',
+        'font-secondary': '#757575',
         'font-third-rate': '#585555',
         'project-preview-primary': '#724AE4',
         'btn-primary': '#000000',
@@ -28,6 +28,8 @@ module.exports = {
         'footer-secondary': '#FFFFFF',
         'tooltip-bg': '#000000',
         'tooltip-font': '#FFFFFF',
+        'og-tag-next-primary': '#000000',
+        'og-tag-next-secondary': '#FFFFFF',
       },
 
       backgroundImage: {
