@@ -21,10 +21,11 @@ const UiContainer: FC<UiContainerNestedProps> = ({
   style,
   margin,
   maxWidth,
+  as: Component = 'section',
   ...props
 }) => {
   return (
-    <section
+    <Component
       style={
         {
           '--max-container-width': maxWidth ?? AppConstants.maxContainerWidth,
@@ -37,7 +38,7 @@ const UiContainer: FC<UiContainerNestedProps> = ({
       {...props}
     >
       {children}
-    </section>
+    </Component>
   );
 };
 
