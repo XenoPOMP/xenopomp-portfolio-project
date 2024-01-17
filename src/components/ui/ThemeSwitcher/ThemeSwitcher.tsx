@@ -2,7 +2,7 @@
 
 import { VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 import useBoolean from '@/src/hooks/useBoolean';
 
@@ -18,6 +18,29 @@ const ThemeSwitcher: VariableFC<
     window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
   );
+
+  useEffect(() => {
+    const callback = (event: MediaQueryListEvent) => {
+      const newColorScheme = event.matches ? 'dark' : 'light';
+
+      if (newColorScheme === 'dark') {
+        setIsDark(true);
+        return;
+      }
+
+      setIsDark(false);
+    };
+
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', callback);
+
+    return () => {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .removeEventListener('change', callback);
+    };
+  }, []);
 
   const Icon: FC = () => {
     if (isDark) {
