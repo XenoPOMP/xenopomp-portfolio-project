@@ -271,6 +271,9 @@ const projectData: IProject[] = sortProjects([
       electron: true,
       redux: true,
     },
+    backendStack: {
+      nest: true,
+    },
     links: {
       ...generateLinks.sourceCodeOnly({
         repo: 'https://github.com/XenoPOMP/game-size-tracker',
