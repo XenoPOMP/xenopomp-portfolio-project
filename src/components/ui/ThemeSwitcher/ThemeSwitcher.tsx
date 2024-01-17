@@ -2,8 +2,9 @@
 
 import { VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
+import { AppConstants } from '@/app/app.constants';
 import useBoolean from '@/src/hooks/useBoolean';
 
 import styles from './ThemeSwitcher.module.scss';
@@ -14,7 +15,43 @@ const ThemeSwitcher: VariableFC<
   ThemeSwitcherProps,
   'onClick' | 'children'
 > = ({ className, ...props }) => {
-  const [isDark, toggleIsDark, setIsDark] = useBoolean(false);
+  const [isDark, toggleIsDark, setIsDark] = useBoolean(
+    window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
+
+  useEffect(() => {
+    const callback = (event: MediaQueryListEvent) => {
+      const newColorScheme = event.matches ? 'dark' : 'light';
+
+      if (newColorScheme === 'dark') {
+        setIsDark(true);
+        return;
+      }
+
+      setIsDark(false);
+    };
+
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', callback);
+
+    return () => {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .removeEventListener('change', callback);
+    };
+  }, []);
+
+  useEffect(() => {
+    const classToAdd = AppConstants.themeNames.dark;
+
+    if (isDark && !document.body.classList.contains(classToAdd)) {
+      document.body.classList.add(classToAdd);
+    } else if (document.body.classList.contains(classToAdd)) {
+      document.body.classList.remove(classToAdd);
+    }
+  }, [isDark]);
 
   const Icon: FC = () => {
     if (isDark) {
