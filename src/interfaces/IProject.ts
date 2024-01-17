@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ComponentProps, ReactNode } from 'react';
 
+import { ReplaceRecordKey } from '@/src/types/ReplaceRecordKey';
+
 export type ProjectPriority = 'high' | 'medium' | 'low';
 
 export type StackTechnology =
@@ -16,11 +18,16 @@ export type StackTechnology =
   | 'electron'
   | 'expo';
 
+export type BackendStackTechnology = 'nest' | 'prisma';
+
 export interface IProject {
   priority?: ProjectPriority;
   title: string;
   description?: string[];
   madeOn?: Partial<Record<StackTechnology, boolean>>;
+  backend?: Partial<
+    ReplaceRecordKey<NonNullable<IProject['madeOn']>, BackendStackTechnology>
+  >;
   links?: Partial<
     Record<
       'primary' | 'secondary',
