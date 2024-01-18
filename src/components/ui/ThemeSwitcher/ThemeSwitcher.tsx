@@ -107,11 +107,12 @@ const ThemeSwitcher: VariableFC<
   useEffect(() => {
     const classToAdd = AppConstants.themeNames.dark;
 
-    if (isDark && !document.body.classList.contains(classToAdd)) {
+    if (isDark) {
       document.body.classList.add(classToAdd);
-    } else if (document.body.classList.contains(classToAdd)) {
-      document.body.classList.remove(classToAdd);
+      return;
     }
+
+    document.body.classList.remove(classToAdd);
   }, [isDark]);
 
   return (
