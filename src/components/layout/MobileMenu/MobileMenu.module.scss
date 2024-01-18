@@ -1,4 +1,6 @@
 article.mobileMenu {
+  @apply flex gap-[1em] items-center;
+
   font-size: 1em; // 1em = 20px
 
   button.expandButton {

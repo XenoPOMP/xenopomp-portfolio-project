@@ -1,15 +1,11 @@
 import cn from 'classnames';
 import { Unbounded } from 'next/font/google';
-import Link from 'next/link';
 import { FC } from 'react';
 
 import DesktopNav from '@/src/components/layout/DesktopNav/DesktopNav.ts';
 import MobileMenu from '@/src/components/layout/MobileMenu/MobileMenu';
 import Logotype from '@/src/components/ui/Logotype/Logotype';
-import Navbar from '@/src/components/ui/Navbar/Navbar';
-import ThemeSwitcher from '@/src/components/ui/ThemeSwitcher/ThemeSwitcher';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
-import SFMono from '@/src/fonts/sf-mono-font';
 
 import styles from './Header.module.scss';
 import type { HeaderProps } from './Header.props';
