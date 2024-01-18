@@ -8,7 +8,10 @@ interface IUseTheme {
   isDarkTheme: boolean;
 }
 
-export const useTheme = (): IUseTheme => {
+export const useTheme = (options?: {
+  onDarkThemeEnabled?: () => void;
+  onDarkThemeDisabled?: () => void;
+}): IUseTheme => {
   if (typeof document === 'undefined') {
     return {
       isDarkTheme: false,
@@ -23,9 +26,13 @@ export const useTheme = (): IUseTheme => {
     classToWatch: AppConstants.themeNames.dark,
     classAddedCallback: () => {
       setIsDarkTheme(true);
+
+      options?.onDarkThemeEnabled?.();
     },
     classRemovedCallback: () => {
       setIsDarkTheme(false);
+
+      options?.onDarkThemeDisabled?.();
     },
   });
 

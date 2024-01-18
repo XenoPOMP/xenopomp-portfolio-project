@@ -6,6 +6,7 @@ import { ComponentProps, FC, useEffect } from 'react';
 
 import { AppConstants } from '@/app/app.constants';
 import useBoolean from '@/src/hooks/useBoolean';
+import { useTheme } from '@/src/utils/isDarkTheme';
 
 import styles from './ThemeSwitcher.module.scss';
 import type { ThemeSwitcherProps } from './ThemeSwitcher.props';
@@ -16,6 +17,11 @@ const ThemeSwitcher: VariableFC<
   'onClick' | 'children'
 > = ({ className, ...props }) => {
   const [isDark, toggleIsDark, setIsDark] = useBoolean(false);
+
+  useTheme({
+    onDarkThemeEnabled: () => setIsDark(true),
+    onDarkThemeDisabled: () => setIsDark(false),
+  });
 
   const Icon: FC = () => {
     if (isDark) {
