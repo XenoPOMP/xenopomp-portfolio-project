@@ -1,3 +1,5 @@
+'use client';
+
 import { Nullable } from '@xenopomp/advanced-types';
 
 interface ClassWatcherOptions {

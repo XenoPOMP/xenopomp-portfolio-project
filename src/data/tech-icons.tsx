@@ -9,7 +9,7 @@ import {
   BackendStackTechnology,
   StackTechnology,
 } from '@/src/interfaces/IProject';
-import { isDarkTheme, useTheme } from '@/src/utils/isDarkTheme';
+import { useTheme } from '@/src/utils/isDarkTheme';
 
 type Tech = {
   component: ReactNode;

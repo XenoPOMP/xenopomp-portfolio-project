@@ -15,6 +15,10 @@ const ThemeSwitcher: VariableFC<
   ThemeSwitcherProps,
   'onClick' | 'children'
 > = ({ className, ...props }) => {
+  if (typeof window === 'undefined') {
+    return undefined;
+  }
+
   const [isDark, toggleIsDark, setIsDark] = useBoolean(
     window !== undefined &&
       window?.matchMedia &&
