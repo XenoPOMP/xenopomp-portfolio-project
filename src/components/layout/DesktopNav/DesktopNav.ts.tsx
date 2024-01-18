@@ -10,10 +10,20 @@ import type { DesktopNavProps } from './DesktopNav.props';
 
 const DesktopNav: VariableFC<'div', DesktopNavProps, 'children'> = ({
   className,
+  style,
   ...props
 }) => {
   return (
-    <div className={cn(className)} {...props}>
+    <div
+      className={cn(className)}
+      style={{
+        display: 'inherit',
+        gap: 'inherit',
+        alignItems: 'inherit',
+        ...style,
+      }}
+      {...props}
+    >
       <Navbar className={cn(styles.desktop)} />
 
       <ThemeSwitcher className={cn(styles.desktop)} />

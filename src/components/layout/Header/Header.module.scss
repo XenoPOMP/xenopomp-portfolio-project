@@ -20,7 +20,7 @@ header.appHeader {
       nav.desktop,
       button.desktop,
       .desktopWrapper {
-        display: none;
+        display: none !important;
       }
 
       article.mobile {
