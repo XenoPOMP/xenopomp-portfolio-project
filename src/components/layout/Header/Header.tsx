@@ -3,6 +3,7 @@ import { Unbounded } from 'next/font/google';
 import Link from 'next/link';
 import { FC } from 'react';
 
+import DesktopNav from '@/src/components/layout/DesktopNav/DesktopNav.ts';
 import MobileMenu from '@/src/components/layout/MobileMenu/MobileMenu';
 import Logotype from '@/src/components/ui/Logotype/Logotype';
 import Navbar from '@/src/components/ui/Navbar/Navbar';
@@ -24,9 +25,7 @@ const Header: FC<HeaderProps> = ({}) => {
         <Logotype />
 
         <article className={cn('flex gap-[2em] items-center')}>
-          <Navbar className={cn(styles.desktop)} />
-
-          <ThemeSwitcher className={cn(styles.desktop)} />
+          <DesktopNav />
         </article>
 
         <MobileMenu className={cn(styles.mobile)} />
