@@ -2,7 +2,7 @@
 
 import { VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
-import { FC, useEffect } from 'react';
+import { ComponentProps, FC, useEffect } from 'react';
 
 import { AppConstants } from '@/app/app.constants';
 import useBoolean from '@/src/hooks/useBoolean';
@@ -15,11 +15,7 @@ const ThemeSwitcher: VariableFC<
   ThemeSwitcherProps,
   'onClick' | 'children'
 > = ({ className, ...props }) => {
-  const [isDark, toggleIsDark, setIsDark] = useBoolean(
-    window !== undefined &&
-      window?.matchMedia &&
-      window?.matchMedia('(prefers-color-scheme: dark)').matches
-  );
+  const [isDark, toggleIsDark, setIsDark] = useBoolean(false);
 
   const Icon: FC = () => {
     if (isDark) {
@@ -57,10 +53,10 @@ const ThemeSwitcher: VariableFC<
     );
   };
 
-  const ButtonItself: VariableFC<'button', {}, 'children'> = ({
-    className: btnClassname,
-    ...btnProps
-  }) => {
+  const ButtonItself: VariableFC<
+    typeof ThemeSwitcher,
+    {} & Pick<ComponentProps<'button'>, 'onClick'>
+  > = ({ className: btnClassname, ...btnProps }) => {
     return (
       <button
         className={cn(
@@ -76,10 +72,16 @@ const ThemeSwitcher: VariableFC<
   };
 
   if (typeof window === 'undefined') {
-    return <ButtonItself />;
+    return <ButtonItself {...props} />;
   }
 
   useEffect(() => {
+    setIsDark(
+      window !== undefined &&
+        window?.matchMedia &&
+        window?.matchMedia('(prefers-color-scheme: dark)').matches
+    );
+
     const callback = (event: MediaQueryListEvent) => {
       const newColorScheme = event.matches ? 'dark' : 'light';
 
@@ -118,6 +120,7 @@ const ThemeSwitcher: VariableFC<
         onClick={() => {
           toggleIsDark();
         }}
+        {...props}
       />
     </>
   );
