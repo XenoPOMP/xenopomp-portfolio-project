@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { FC, Fragment } from 'react';
 
 import { appNavbarLinks } from '@/src/components/ui/Navbar/Navbar';
+import ThemeSwitcher from '@/src/components/ui/ThemeSwitcher/ThemeSwitcher';
 
 import styles from './MobileMenu.module.scss';
 import type { MobileMenuProps } from './MobileMenu.props';
@@ -13,6 +14,8 @@ import type { MobileMenuProps } from './MobileMenu.props';
 const MobileMenu: FC<MobileMenuProps> = ({ className, ...props }) => {
   return (
     <article className={cn(styles.mobileMenu, className)} {...props}>
+      <ThemeSwitcher />
+
       <Menu as={'nav'} className={cn('relative inline-block')}>
         <Menu.Button className={cn(styles.expandButton)}>
           <svg
@@ -66,6 +69,10 @@ const MobileMenu: FC<MobileMenuProps> = ({ className, ...props }) => {
                 </Menu.Item>
               );
             })}
+
+            {/*<Menu.Item as={'li'}>*/}
+            {/*  <ThemeSwitcher />*/}
+            {/*</Menu.Item>*/}
           </Menu.Items>
         </Transition>
       </Menu>

@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <AboutMeSection />
 
-      <ProjectSection displayLimit={10} />
+      <ProjectSection />
     </main>
   );
 }

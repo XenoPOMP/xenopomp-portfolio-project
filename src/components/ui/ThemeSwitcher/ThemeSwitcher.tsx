@@ -2,9 +2,11 @@
 
 import { VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
-import { FC } from 'react';
+import { ComponentProps, FC, useEffect } from 'react';
 
+import { AppConstants } from '@/app/app.constants';
 import useBoolean from '@/src/hooks/useBoolean';
+import { useTheme } from '@/src/utils/isDarkTheme';
 
 import styles from './ThemeSwitcher.module.scss';
 import type { ThemeSwitcherProps } from './ThemeSwitcher.props';
@@ -15,6 +17,11 @@ const ThemeSwitcher: VariableFC<
   'onClick' | 'children'
 > = ({ className, ...props }) => {
   const [isDark, toggleIsDark, setIsDark] = useBoolean(false);
+
+  useTheme({
+    onDarkThemeEnabled: () => setIsDark(true),
+    onDarkThemeDisabled: () => setIsDark(false),
+  });
 
   const Icon: FC = () => {
     if (isDark) {
@@ -52,20 +59,77 @@ const ThemeSwitcher: VariableFC<
     );
   };
 
+  const ButtonItself: VariableFC<
+    typeof ThemeSwitcher,
+    {} & Pick<ComponentProps<'button'>, 'onClick'>
+  > = ({ className: btnClassname, ...btnProps }) => {
+    return (
+      <button
+        className={cn(
+          'select-none cursor-pointer',
+          styles.themeSwitcher,
+          btnClassname
+        )}
+        {...btnProps}
+      >
+        <Icon />
+      </button>
+    );
+  };
+
+  if (typeof window === 'undefined') {
+    return <ButtonItself {...props} />;
+  }
+
+  useEffect(() => {
+    setIsDark(
+      window !== undefined &&
+        window?.matchMedia &&
+        window?.matchMedia('(prefers-color-scheme: dark)').matches
+    );
+
+    const callback = (event: MediaQueryListEvent) => {
+      const newColorScheme = event.matches ? 'dark' : 'light';
+
+      if (newColorScheme === 'dark') {
+        setIsDark(true);
+        return;
+      }
+
+      setIsDark(false);
+    };
+
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', callback);
+
+    return () => {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .removeEventListener('change', callback);
+    };
+  }, []);
+
+  useEffect(() => {
+    const classToAdd = AppConstants.themeNames.dark;
+
+    if (isDark) {
+      document.body.classList.add(classToAdd);
+      return;
+    }
+
+    document.body.classList.remove(classToAdd);
+  }, [isDark]);
+
   return (
-    <button
-      className={cn(
-        'select-none cursor-pointer',
-        styles.themeSwitcher,
-        className
-      )}
-      {...props}
-      onClick={() => {
-        toggleIsDark();
-      }}
-    >
-      <Icon />
-    </button>
+    <>
+      <ButtonItself
+        onClick={() => {
+          toggleIsDark();
+        }}
+        {...props}
+      />
+    </>
   );
 };
 

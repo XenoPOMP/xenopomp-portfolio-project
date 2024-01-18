@@ -1,3 +1,5 @@
+@import "src/styles/templates";
+
 header.appHeader {
   @apply bg-primary py-[1.5em] z-[2000];
 
@@ -18,12 +20,13 @@ header.appHeader {
 
     @media (max-width: 900px) {
       nav.desktop,
-      button.desktop {
-        display: none;
+      button.desktop,
+      .desktopWrapper {
+        display: none !important;
       }
 
       article.mobile {
-        display: unset;
+        display: flex;
       }
     }
   }

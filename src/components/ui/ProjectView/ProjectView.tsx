@@ -10,7 +10,9 @@ import { Tooltip } from 'react-tooltip';
 import { util } from 'zod';
 
 import zustandIconImage from '@/public/icons/Zustand Icon.png';
+import AsyncImage from '@/src/components/ui/AsyncImage/AsyncImage.ts';
 import Button from '@/src/components/ui/Button/Button';
+import MadeOnBlock from '@/src/components/ui/MadeOnBlock/MadeOnBlock';
 import techIcons from '@/src/data/tech-icons';
 import { StackTechnology } from '@/src/interfaces/IProject';
 
@@ -25,16 +27,22 @@ const ProjectView: FC<ProjectViewProps> = ({
   className,
   ...props
 }) => {
-  const { title, description, madeOn, links, image } = project;
+  const { title, description, madeOn, backendStack, links, image } = project;
 
-  const getMadeOnString = (): ReactNode => {
+  const getMadeOnString = (options?: { isBackend?: boolean }): ReactNode => {
     const selectedTechnologies: Array<RecordValue<typeof techIcons>> = [];
 
-    if (!isUndefined(madeOn)) {
-      objectKeys(madeOn).map(key => {
-        const objectKey = key as keyof typeof madeOn;
+    let target: typeof madeOn | typeof backendStack = madeOn;
 
-        if (madeOn[objectKey]) {
+    if (options?.isBackend) {
+      target = backendStack;
+    }
+
+    if (!isUndefined(target)) {
+      objectKeys(target).map(key => {
+        const objectKey = key as keyof typeof target;
+
+        if (target![objectKey]) {
           selectedTechnologies.push(techIcons[objectKey]);
         }
       });
@@ -42,22 +50,36 @@ const ProjectView: FC<ProjectViewProps> = ({
 
     return (
       <div className={cn('flex flex-wrap gap-[.4em] items-center')}>
-        {selectedTechnologies.map(tech => (
-          <>
-            <div
-              data-tooltip-id={`${tech.title}-tooltip`}
-              data-tooltip-content={tech.title}
-              data-tooltip-place='bottom'
-            >
-              {tech.component}
-            </div>
+        {selectedTechnologies.map(tech => {
+          if (tech === undefined) {
+            return undefined;
+          }
 
-            <Tooltip
-              id={`${tech.title}-tooltip`}
-              className={cn('bg-tooltip-bg text-tooltip-font bg-opacity-100')}
-            />
-          </>
-        ))}
+          return (
+            <>
+              <div
+                data-tooltip-id={`${tech.title}-tooltip`}
+                data-tooltip-content={tech.title}
+                data-tooltip-place='bottom'
+                className={cn()
+                // 'text-font-primary'
+                }
+              >
+                {tech.component}
+              </div>
+
+              <Tooltip
+                id={`${title}-tooltip`}
+                style={{
+                  borderRadius: '5px',
+                }}
+                className={cn(
+                  '!bg-tooltip-bg !text-tooltip-font !bg-opacity-100'
+                )}
+              />
+            </>
+          );
+        })}
       </div>
     );
   };
@@ -84,7 +106,7 @@ const ProjectView: FC<ProjectViewProps> = ({
     >
       <div className={cn(styles.photoBlock)}>
         {image && (
-          <Image
+          <AsyncImage
             src={image.src}
             alt={image.alt}
             className={cn(
@@ -92,6 +114,7 @@ const ProjectView: FC<ProjectViewProps> = ({
               image.orientation === 'vertical' && styles.vertical,
               image.orientation === 'horizontal' && styles.horizontal
             )}
+            priority={false}
           />
         )}
       </div>
@@ -107,15 +130,17 @@ const ProjectView: FC<ProjectViewProps> = ({
               })}
             </div>
 
-            <div
-              className={cn(
-                'text-font-third-rate flex flex-wrap gap-[.5em] items-center',
-                reversed && 'justify-end'
+            <>
+              <MadeOnBlock reversed={reversed}>{getMadeOnString()}</MadeOnBlock>
+
+              {backendStack && (
+                <MadeOnBlock reversed={reversed} label={'Backend:'}>
+                  {getMadeOnString({
+                    isBackend: true,
+                  })}
+                </MadeOnBlock>
               )}
-            >
-              <span>Сделан на:</span>
-              {getMadeOnString()}
-            </div>
+            </>
           </div>
         </header>
 

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import Metrika from 'next-metrika';
 import { OpenGraphType } from 'next/dist/lib/metadata/types/opengraph-types';
+import { Geologica } from 'next/font/google';
 import Script from 'next/script';
 
 import { AppConstants } from '@/app/app.constants';
@@ -12,7 +14,9 @@ import SFProDisplay from '@/src/fonts/sf-pro-display-font';
 
 import './globals.scss';
 
-const mainFont = SFProDisplay;
+// const mainFont = SFProDisplay;
+
+const mainFont = Geologica({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
   title: AppConstants.appName,
@@ -59,21 +63,10 @@ export default function RootLayout({
           {children}
 
           <Footer />
-        </Providers>
 
-        <Script id={'metrika-counter'} strategy={'afterInteractive'}>
-          {`   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-           m[i].l=1*new Date();
-           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-        
-           ym(95183872, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true
-           });`}
-        </Script>
+          {/* Disable Metrika in dev environment. */}
+          <Metrika id={95183872} />
+        </Providers>
       </body>
     </html>
   );

@@ -1,0 +1,7 @@
+// Fix all children inside flexbox
+// by setting their min width to 0
+%flexFix {
+  & * {
+    min-width: 0;
+  }
+}

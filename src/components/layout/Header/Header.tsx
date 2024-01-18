@@ -1,18 +1,18 @@
 import cn from 'classnames';
-import Link from 'next/link';
+import { Unbounded } from 'next/font/google';
 import { FC } from 'react';
 
+import DesktopNav from '@/src/components/layout/DesktopNav/DesktopNav.ts';
 import MobileMenu from '@/src/components/layout/MobileMenu/MobileMenu';
 import Logotype from '@/src/components/ui/Logotype/Logotype';
-import Navbar from '@/src/components/ui/Navbar/Navbar';
-import ThemeSwitcher from '@/src/components/ui/ThemeSwitcher/ThemeSwitcher';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
-import SFMono from '@/src/fonts/sf-mono-font';
 
 import styles from './Header.module.scss';
 import type { HeaderProps } from './Header.props';
 
-const font = SFMono;
+// const font = SFMono;
+
+const font = Unbounded({ subsets: ['latin', 'cyrillic'] });
 
 const Header: FC<HeaderProps> = ({}) => {
   return (
@@ -21,9 +21,7 @@ const Header: FC<HeaderProps> = ({}) => {
         <Logotype />
 
         <article className={cn('flex gap-[2em] items-center')}>
-          <Navbar className={cn(styles.desktop)} />
-
-          <ThemeSwitcher className={cn(styles.desktop)} />
+          <DesktopNav className={cn(styles.desktopWrapper)} />
         </article>
 
         <MobileMenu className={cn(styles.mobile)} />

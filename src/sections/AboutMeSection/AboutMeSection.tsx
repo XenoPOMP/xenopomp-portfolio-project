@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { FC } from 'react';
 import Emoji from 'react-ios-emojis';
 
-import avatarPlaceholderImg from '@/public/arts/avatar-placeholder.png';
+import avatarPlaceholderImg from '@/public/myself.png';
+import AsyncImage from '@/src/components/ui/AsyncImage/AsyncImage.ts';
 import SocialMediaLinks from '@/src/components/ui/SocialMediaLinks/SocialMediaLinks';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 
@@ -33,7 +34,15 @@ const AboutMeSection: FC<AboutMeSectionProps> = ({}) => {
       </article>
 
       <article className={cn(styles.part, styles.rightPart)}>
-        <Image src={avatarPlaceholderImg} alt={'Это я :)'} priority={true} />
+        <AsyncImage
+          className={cn('aspect-square')}
+          style={{
+            objectFit: 'cover',
+          }}
+          src={avatarPlaceholderImg}
+          alt={'Это я :)'}
+          priority={true}
+        />
       </article>
     </UiContainer>
   );
