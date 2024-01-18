@@ -13,6 +13,7 @@ const Logotype: FC<LogotypeProps> = ({ className, ...props }) => {
     <Link
       href={'/#'}
       className={cn('font-bold', styles.logo, logoFont.className, className)}
+      {...props}
     >
       xeno.pomp
     </Link>
