@@ -15,6 +15,12 @@ const ThemeSwitcher: VariableFC<
   ThemeSwitcherProps,
   'onClick' | 'children'
 > = ({ className, ...props }) => {
+  const [isDark, toggleIsDark, setIsDark] = useBoolean(
+    window !== undefined &&
+      window?.matchMedia &&
+      window?.matchMedia('(prefers-color-scheme: dark)').matches
+  );
+
   const Icon: FC = () => {
     if (isDark) {
       return (
@@ -72,12 +78,6 @@ const ThemeSwitcher: VariableFC<
   if (typeof window === 'undefined') {
     return <ButtonItself />;
   }
-
-  const [isDark, toggleIsDark, setIsDark] = useBoolean(
-    window !== undefined &&
-      window?.matchMedia &&
-      window?.matchMedia('(prefers-color-scheme: dark)').matches
-  );
 
   useEffect(() => {
     const callback = (event: MediaQueryListEvent) => {
