@@ -25,7 +25,7 @@ const Header: FC<HeaderProps> = ({}) => {
         <Logotype />
 
         <article className={cn('flex gap-[2em] items-center')}>
-          <DesktopNav />
+          <DesktopNav className={cn(styles.desktopWrapper)} />
         </article>
 
         <MobileMenu className={cn(styles.mobile)} />

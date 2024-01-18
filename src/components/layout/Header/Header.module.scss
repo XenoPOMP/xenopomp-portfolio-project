@@ -18,7 +18,8 @@ header.appHeader {
 
     @media (max-width: 900px) {
       nav.desktop,
-      button.desktop {
+      button.desktop,
+      .desktopWrapper {
         display: none;
       }
 
