@@ -10,6 +10,7 @@ import { Tooltip } from 'react-tooltip';
 import { util } from 'zod';
 
 import zustandIconImage from '@/public/icons/Zustand Icon.png';
+import AsyncImage from '@/src/components/ui/AsyncImage/AsyncImage.ts';
 import Button from '@/src/components/ui/Button/Button';
 import MadeOnBlock from '@/src/components/ui/MadeOnBlock/MadeOnBlock';
 import techIcons from '@/src/data/tech-icons';
@@ -103,7 +104,7 @@ const ProjectView: FC<ProjectViewProps> = ({
     >
       <div className={cn(styles.photoBlock)}>
         {image && (
-          <Image
+          <AsyncImage
             src={image.src}
             alt={image.alt}
             className={cn(
