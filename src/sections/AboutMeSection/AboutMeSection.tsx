@@ -4,6 +4,7 @@ import { FC } from 'react';
 import Emoji from 'react-ios-emojis';
 
 import avatarPlaceholderImg from '@/public/myself.png';
+import AsyncImage from '@/src/components/ui/AsyncImage/AsyncImage.ts';
 import SocialMediaLinks from '@/src/components/ui/SocialMediaLinks/SocialMediaLinks';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 
@@ -33,7 +34,7 @@ const AboutMeSection: FC<AboutMeSectionProps> = ({}) => {
       </article>
 
       <article className={cn(styles.part, styles.rightPart)}>
-        <Image
+        <AsyncImage
           className={cn('aspect-square')}
           style={{
             objectFit: 'cover',
