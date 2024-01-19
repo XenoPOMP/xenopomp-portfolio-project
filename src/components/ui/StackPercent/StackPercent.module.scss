@@ -4,5 +4,10 @@
   svg, img {
     height: 2em;
     max-width: 2em;
+    object-fit: contain;
+  }
+
+  .percentLabel {
+    @apply font-normal text-[.8em];
   }
 }
