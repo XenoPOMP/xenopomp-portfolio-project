@@ -3,7 +3,7 @@ section.percentage {
 
   font-size: 1rem; // 1em = 20px
 
-  article.groups {
+  .groups {
     display: grid;
     gap: 2em;
     grid-template-columns: repeat(2, 1fr);

@@ -6,6 +6,8 @@ import { ReplaceRecordKey } from '@/src/types/ReplaceRecordKey';
 
 export type ProjectPriority = 'high' | 'medium' | 'low';
 
+export type FullstackTechnology = StackTechnology | BackendStackTechnology;
+
 export type StackTechnology =
   | 'react'
   | 'vite'

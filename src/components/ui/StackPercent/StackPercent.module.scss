@@ -1,0 +1,8 @@
+.stackPercent {
+  @apply flex gap-[1em] items-center;
+
+  svg, img {
+    height: 2em;
+    max-width: 2em;
+  }
+}

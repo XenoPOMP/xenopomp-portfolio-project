@@ -17,9 +17,9 @@ type Tech = {
 };
 
 const IconWrapper: FC<PropsWith<'children', {}>> = ({ children }) => {
-  const { isDarkTheme } = useTheme();
+  // const { isDarkTheme } = useTheme();
 
-  const isMonochrome = [isDarkTheme, true].includes(true);
+  const isMonochrome = [false].includes(true);
 
   return (
     <div

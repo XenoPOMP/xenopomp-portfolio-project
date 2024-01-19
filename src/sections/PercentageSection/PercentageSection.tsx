@@ -25,10 +25,10 @@ const PercentageSection: VariableFC<
     >
       <Heading level={'2'}>Используемые технологии в моих проектах</Heading>
 
-      <article className={cn(styles.groups)}>
+      <div className={cn(styles.groups)}>
         <StackPercentBlock title={'Front-end'} />
         <StackPercentBlock title={'Back-end'} />
-      </article>
+      </div>
     </UiContainer>
   );
 };
