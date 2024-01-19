@@ -36,13 +36,13 @@ const PercentageSection: VariableFC<
         items: ComponentProps<typeof StackPercentBlock>['entries'],
         key: string
       ): boolean => {
-        const entryIndex = frontend.findIndex(item => item.techName === key);
+        const entryIndex = items.findIndex(item => item.techName === key);
 
         if (entryIndex === -1) {
           return false;
         }
 
-        frontend[entryIndex].percent++;
+        items[entryIndex].percent++;
         return true;
       };
 
