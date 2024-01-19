@@ -1,0 +1,11 @@
+section.percentage {
+  @apply pt-[6em] flex flex-col gap-[2em];
+
+  font-size: 1rem; // 1em = 20px
+
+  article.groups {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
