@@ -24,70 +24,11 @@ const PercentageSection: VariableFC<
     const frontend: ComponentProps<typeof StackPercentBlock>['entries'] = [];
     const backend: ComponentProps<typeof StackPercentBlock>['entries'] = [];
 
-    projectData.forEach(({ madeOn, backendStack }) => {
-      const isNameInArray = (
-        item: ComponentProps<typeof StackPercentBlock>['entries'],
-        name: FullstackTechnology
-      ) => {
-        return item?.map(item => item.techName).includes(name);
-      };
-
-      const incrementEntry = (
-        items: ComponentProps<typeof StackPercentBlock>['entries'],
-        key: string
-      ): boolean => {
-        const entryIndex = items.findIndex(item => item.techName === key);
-
-        if (entryIndex === -1) {
-          return false;
-        }
-
-        items[entryIndex].percent++;
-        return true;
-      };
-
-      getObjectKeys(madeOn ?? {}).forEach(key => {
-        if (isNameInArray(frontend, key)) {
-          incrementEntry(frontend, key);
-
-          return;
-        }
-
-        if (madeOn![key]) {
-          frontend.push({ techName: key, percent: 1 });
-        }
-      });
-
-      getObjectKeys(backendStack ?? {}).forEach(key => {
-        if (isNameInArray(backend, key)) {
-          incrementEntry(backend, key);
-
-          return;
-        }
-
-        if (backendStack![key]) {
-          backend.push({ techName: key, percent: 1 });
-        }
-      });
-    });
+    // TODO: Create normal project stack counter
 
     return {
-      frontend: frontend.map(item => {
-        const totalCountOfItems = frontend.length;
-
-        return {
-          techName: item.techName,
-          percent: (item.percent / totalCountOfItems) * 100,
-        };
-      }),
-      backend: backend.map(item => {
-        const totalCountOfItems = backend.length;
-
-        return {
-          techName: item.techName,
-          percent: (item.percent / totalCountOfItems) * 100,
-        };
-      }),
+      frontend,
+      backend,
     };
   };
 
