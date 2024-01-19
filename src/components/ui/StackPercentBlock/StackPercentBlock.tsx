@@ -13,14 +13,22 @@ const StackPercentBlock: FC<StackPercentBlockProps> = ({ title, entries }) => {
       <h3 className={cn(styles.title)}>{title}</h3>
 
       <div className={cn(styles.items)}>
-        {entries.map((entr, index) => {
-          return (
-            <StackPercent
-              {...entr}
-              key={`entry of ${title} with index ${index}`}
-            />
-          );
-        })}
+        {entries
+          .sort((itemA, itemB) => {
+            if (itemA.percent === itemB.percent) {
+              return 0;
+            }
+
+            return itemA.percent < itemB.percent ? 1 : -1;
+          })
+          .map((entr, index) => {
+            return (
+              <StackPercent
+                {...entr}
+                key={`entry of ${title} with index ${index}`}
+              />
+            );
+          })}
       </div>
     </article>
   );

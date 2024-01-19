@@ -1,11 +1,13 @@
-import { VariableFC } from '@xenopomp/advanced-types';
+import { Defined, RecordKey, VariableFC } from '@xenopomp/advanced-types';
+import { getObjectKeys } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
-import { FC } from 'react';
+import { ComponentProps, FC } from 'react';
 
 import Heading from '@/src/components/ui/Heading/Heading';
 import StackPercentBlock from '@/src/components/ui/StackPercentBlock/StackPercentBlock';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 import projectData from '@/src/data/project-data';
+import { FullstackTechnology } from '@/src/interfaces/IProject';
 
 import styles from './PercentageSection.module.scss';
 import type { PercentageSectionProps } from './PercentageSection.props';
@@ -15,7 +17,79 @@ const PercentageSection: VariableFC<
   PercentageSectionProps,
   'children' | 'as'
 > = ({ className, ...props }) => {
-  const sus = projectData;
+  const getEntries = (): Record<
+    'frontend' | 'backend',
+    ComponentProps<typeof StackPercentBlock>['entries']
+  > => {
+    const frontend: ComponentProps<typeof StackPercentBlock>['entries'] = [];
+    const backend: ComponentProps<typeof StackPercentBlock>['entries'] = [];
+
+    projectData.forEach(({ madeOn, backendStack }) => {
+      const isNameInArray = (
+        item: ComponentProps<typeof StackPercentBlock>['entries'],
+        name: FullstackTechnology
+      ) => {
+        return item?.map(item => item.techName).includes(name);
+      };
+
+      const incrementEntry = (
+        items: ComponentProps<typeof StackPercentBlock>['entries'],
+        key: string
+      ): boolean => {
+        const entryIndex = frontend.findIndex(item => item.techName === key);
+
+        if (entryIndex === -1) {
+          return false;
+        }
+
+        frontend[entryIndex].percent++;
+        return true;
+      };
+
+      getObjectKeys(madeOn ?? {}).forEach(key => {
+        if (isNameInArray(frontend, key)) {
+          incrementEntry(frontend, key);
+
+          return;
+        }
+
+        if (madeOn![key]) {
+          frontend.push({ techName: key, percent: 1 });
+        }
+      });
+
+      getObjectKeys(backendStack ?? {}).forEach(key => {
+        if (isNameInArray(backend, key)) {
+          incrementEntry(backend, key);
+
+          return;
+        }
+
+        if (backendStack![key]) {
+          backend.push({ techName: key, percent: 1 });
+        }
+      });
+    });
+
+    return {
+      frontend: frontend.map(item => {
+        const totalCountOfItems = frontend.length;
+
+        return {
+          techName: item.techName,
+          percent: (item.percent / totalCountOfItems) * 100,
+        };
+      }),
+      backend: backend.map(item => {
+        const totalCountOfItems = backend.length;
+
+        return {
+          techName: item.techName,
+          percent: (item.percent / totalCountOfItems) * 100,
+        };
+      }),
+    };
+  };
 
   return (
     <UiContainer
@@ -28,20 +102,7 @@ const PercentageSection: VariableFC<
       <div className={cn(styles.groups)}>
         <StackPercentBlock
           title={'Front-end'}
-          entries={[
-            {
-              techName: 'react',
-              percent: 95.5,
-            },
-            {
-              techName: 'react',
-              percent: 95.5,
-            },
-            {
-              techName: 'react',
-              percent: 95.5,
-            },
-          ]}
+          entries={getEntries().frontend}
         />
 
         {/*<StackPercentBlock title={'Back-end'} />*/}
