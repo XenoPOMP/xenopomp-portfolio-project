@@ -7,6 +7,10 @@
     object-fit: contain;
   }
 
+  .progress {
+    flex-grow: 1;
+  }
+
   .percentLabel {
     @apply font-normal text-[.8em];
   }

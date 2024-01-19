@@ -16,6 +16,8 @@ const StackPercentBlock: FC<StackPercentBlockProps> = ({ title }) => {
 
       <div className={cn(styles.items)}>
         <StackPercent techName={'react'} percent={95.5} />
+        <StackPercent techName={'react'} percent={65} />
+        <StackPercent techName={'react'} percent={25} />
       </div>
     </article>
   );
