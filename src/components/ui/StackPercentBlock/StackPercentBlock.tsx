@@ -7,17 +7,20 @@ import StackPercent from '@/src/components/ui/StackPercent/StackPercent';
 import styles from './StackPercentBlock.module.scss';
 import type { StackPercentBlockProps } from './StackPercentBlock.props';
 
-const StackPercentBlock: FC<StackPercentBlockProps> = ({ title }) => {
-  // const totalVotes = summary(...entries.map(ent => ent.votes));
-
+const StackPercentBlock: FC<StackPercentBlockProps> = ({ title, entries }) => {
   return (
     <article className={cn(styles.block)}>
       <h3 className={cn(styles.title)}>{title}</h3>
 
       <div className={cn(styles.items)}>
-        <StackPercent techName={'react'} percent={95.5} />
-        <StackPercent techName={'react'} percent={65} />
-        <StackPercent techName={'react'} percent={25} />
+        {entries.map((entr, index) => {
+          return (
+            <StackPercent
+              {...entr}
+              key={`entry of ${title} with index ${index}`}
+            />
+          );
+        })}
       </div>
     </article>
   );

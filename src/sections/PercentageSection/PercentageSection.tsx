@@ -26,8 +26,25 @@ const PercentageSection: VariableFC<
       <Heading level={'2'}>Используемые технологии в моих проектах</Heading>
 
       <div className={cn(styles.groups)}>
-        <StackPercentBlock title={'Front-end'} />
-        <StackPercentBlock title={'Back-end'} />
+        <StackPercentBlock
+          title={'Front-end'}
+          entries={[
+            {
+              techName: 'react',
+              percent: 95.5,
+            },
+            {
+              techName: 'react',
+              percent: 95.5,
+            },
+            {
+              techName: 'react',
+              percent: 95.5,
+            },
+          ]}
+        />
+
+        {/*<StackPercentBlock title={'Back-end'} />*/}
       </div>
     </UiContainer>
   );

@@ -39,8 +39,11 @@ const ProgressBar: VariableFC<
         initial={{
           scaleX: 0,
         }}
-        animate={{
+        whileInView={{
           scaleX: [0, 1],
+        }}
+        viewport={{
+          once: true,
         }}
         transition={{
           duration: 1.5,

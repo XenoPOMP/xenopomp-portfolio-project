@@ -1,3 +1,6 @@
+import { ComponentProps } from 'react';
+
+import StackPercent from '@/src/components/ui/StackPercent/StackPercent';
 import {
   BackendStackTechnology,
   StackTechnology,
@@ -12,4 +15,6 @@ export type StackPercentEntry = {
 
 export interface StackPercentBlockProps {
   title?: string;
+
+  entries: Array<ComponentProps<typeof StackPercent>>;
 }
