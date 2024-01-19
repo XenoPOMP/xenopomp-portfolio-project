@@ -105,7 +105,7 @@ const PercentageSection: VariableFC<
           entries={getEntries().frontend}
         />
 
-        {/*<StackPercentBlock title={'Back-end'} />*/}
+        <StackPercentBlock title={'Back-end'} entries={getEntries().backend} />
       </div>
     </UiContainer>
   );
