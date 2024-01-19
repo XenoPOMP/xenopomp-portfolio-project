@@ -1,5 +1,8 @@
+'use client';
+
 import { VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
+import { motion } from 'framer-motion';
 import { CSSProperties, ComponentProps, FC } from 'react';
 
 import styles from './ProgressBar.module.scss';
@@ -32,7 +35,19 @@ const ProgressBar: VariableFC<
       }
       {...props}
     >
-      <div className={cn(styles.bar)}></div>
+      <motion.div
+        initial={{
+          scaleX: 0,
+        }}
+        animate={{
+          scaleX: [0, 1],
+        }}
+        transition={{
+          duration: 1.5,
+          ease: 'easeOut',
+        }}
+        className={cn(styles.bar)}
+      ></motion.div>
     </div>
   );
 };
