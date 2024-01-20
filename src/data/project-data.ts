@@ -73,7 +73,6 @@ const projectData: IProject[] = sortProjects([
     },
     backendStack: {
       nest: true,
-      prisma: true,
     },
     links: {
       primary: {
