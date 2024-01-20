@@ -4,17 +4,14 @@ import { RecordValue } from '@xenopomp/advanced-types';
 import { isUndefined } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { FC, ReactNode } from 'react';
-import { Tooltip } from 'react-tooltip';
 import { util } from 'zod';
 
-import zustandIconImage from '@/public/icons/Zustand Icon.png';
 import AsyncImage from '@/src/components/ui/AsyncImage/AsyncImage.ts';
 import Button from '@/src/components/ui/Button/Button';
 import MadeOnBlock from '@/src/components/ui/MadeOnBlock/MadeOnBlock';
+import WithTooltip from '@/src/components/ui/WithTooltip/WithTooltip';
 import techIcons from '@/src/data/tech-icons';
-import { StackTechnology } from '@/src/interfaces/IProject';
 
 import styles from './ProjectView.module.scss';
 import type { ProjectViewProps } from './ProjectView.props';
@@ -57,26 +54,15 @@ const ProjectView: FC<ProjectViewProps> = ({
 
           return (
             <>
-              <div
-                data-tooltip-id={`${tech.title}-tooltip`}
-                data-tooltip-content={tech.title}
-                data-tooltip-place='bottom'
-                className={cn()
-                // 'text-font-primary'
-                }
+              <WithTooltip
+                tooltip={{
+                  id: `${tech.title}-tooltip`,
+                  content: tech.title,
+                  placement: 'bottom',
+                }}
               >
                 {tech.component}
-              </div>
-
-              <Tooltip
-                id={`${title}-tooltip`}
-                style={{
-                  borderRadius: '5px',
-                }}
-                className={cn(
-                  '!bg-tooltip-bg !text-tooltip-font !bg-opacity-100'
-                )}
-              />
+              </WithTooltip>
             </>
           );
         })}
