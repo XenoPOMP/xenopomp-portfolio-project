@@ -3,6 +3,10 @@ section.percentage {
 
   font-size: 1rem; // 1em = 20px
 
+  @media (max-width: 960px) {
+    font-size: .8rem;
+  }
+
   .groups {
     display: grid;
     gap: 2em;
@@ -10,7 +14,7 @@ section.percentage {
 
     @media (max-width: 960px) {
       gap: 4em;
-      grid-template-columns: 1fr !important;
+      grid-template-columns: 1fr;
     }
   }
 }
