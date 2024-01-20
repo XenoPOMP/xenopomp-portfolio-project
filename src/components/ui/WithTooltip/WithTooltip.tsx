@@ -9,6 +9,8 @@ import { WithTooltipProps } from './WithTooltip.props';
 /**
  * This component is wrapper that adds tooltip.
  *
+ * **This component is CLIENT-SIDE only!** (it uses useLayoutEffect hook.)
+ *
  * @param children
  * @param className
  * @param id
