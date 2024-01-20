@@ -1,8 +1,11 @@
+'use client';
+
 import { roundNumber } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
 import { FC } from 'react';
 
 import ProgressBar from '@/src/components/ui/ProgressBar/ProgressBar';
+import WithTooltip from '@/src/components/ui/WithTooltip/WithTooltip';
 import techIcons from '@/src/data/tech-icons';
 
 import styles from './StackPercent.module.scss';
@@ -13,7 +16,15 @@ const StackPercent: FC<StackPercentProps> = ({ techName, percent }) => {
 
   return (
     <div className={cn(styles.stackPercent)}>
-      {Icon}
+      <WithTooltip
+        tooltip={{
+          id: `${title}-icon`,
+          content: title,
+          placement: 'right',
+        }}
+      >
+        {Icon}
+      </WithTooltip>
 
       <ProgressBar value={percent} max={100} className={cn(styles.progress)} />
 

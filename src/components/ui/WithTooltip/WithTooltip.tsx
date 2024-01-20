@@ -34,8 +34,11 @@ const WithTooltip: FC<
         id={id}
         style={{
           borderRadius: '5px',
+          zIndex: 5000,
         }}
-        className={cn('!bg-tooltip-bg !text-tooltip-font !bg-opacity-100')}
+        className={cn(
+          '!bg-tooltip-bg !text-tooltip-font !opacity-100 dark-theme:shadow-2xl shadow-black/100'
+        )}
       />
     </>
   );
