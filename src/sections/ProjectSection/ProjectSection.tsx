@@ -2,6 +2,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { FC, Fragment } from 'react';
 
+import Heading from '@/src/components/ui/Heading/Heading';
 import ProjectView from '@/src/components/ui/ProjectView/ProjectView';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 import projectData from '@/src/data/project-data';
@@ -33,6 +34,8 @@ const ProjectSection: FC<ProjectSectionProps> = ({
         id={id ?? 'projects'}
         {...props}
       >
+        <Heading level={'2'}>Мои проекты</Heading>
+
         {displayingProjects.map((project, index) => {
           return (
             <ProjectView

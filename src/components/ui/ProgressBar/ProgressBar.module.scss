@@ -1,0 +1,28 @@
+@import "src/styles/templates";
+
+.progressBar {
+  --percent: 0%;
+
+  @include appearance(none);
+
+  @apply bg-social-media-bg;
+
+  border-radius: 500px;
+  height: 8px;
+  min-width: 0;
+  position: relative;
+
+  .bar {
+    @apply bg-nav-highlight;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--percent);
+    border-radius: inherit;
+
+    transition: .5s ease width;
+    transform-origin: left center;
+  }
+}

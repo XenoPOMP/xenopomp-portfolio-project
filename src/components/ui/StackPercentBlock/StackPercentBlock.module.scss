@@ -1,0 +1,11 @@
+article.block {
+  @apply flex flex-col gap-[1em];
+
+  h3.title {
+    @apply font-medium text-[1.75em];
+  }
+
+  .items {
+    @apply flex flex-col gap-[.5em];
+  }
+}

@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  // Fix all children inside
-  // flexbox.
   .flex-fix {
     & * {
       @apply min-w-0;

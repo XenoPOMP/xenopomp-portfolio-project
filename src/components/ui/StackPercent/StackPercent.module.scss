@@ -1,0 +1,17 @@
+.stackPercent {
+  @apply flex gap-[1em] items-center;
+
+  svg, img {
+    height: 2em;
+    max-width: 2em;
+    object-fit: contain;
+  }
+
+  .progress {
+    flex-grow: 1;
+  }
+
+  .percentLabel {
+    @apply font-normal text-[.8em] w-[4ch] text-right;
+  }
+}
