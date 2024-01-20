@@ -23,8 +23,6 @@ const IconWrapper: FC<PropsWith<'children', {}>> = ({ children }) => {
 
 const iconClasses = cn(styles.icon);
 
-const colorInDarkTheme = 'font-primary';
-
 const NextIcon: ReactNode = (
   <IconWrapper>
     <svg
