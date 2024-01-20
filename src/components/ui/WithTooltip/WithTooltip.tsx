@@ -39,7 +39,9 @@ const WithTooltip: FC<
           zIndex: 5000,
         }}
         className={cn(
-          '!bg-tooltip-bg !text-tooltip-font !opacity-100 dark-theme:shadow-2xl shadow-black/100'
+          '!bg-tooltip-bg !text-tooltip-font !opacity-100',
+          'shadow-2xl shadow-primary/25'
+          // 'dark-theme:shadow-black/25'
         )}
       />
     </>
