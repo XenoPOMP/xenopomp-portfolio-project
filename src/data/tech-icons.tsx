@@ -16,9 +16,7 @@ type Tech = {
 };
 
 const IconWrapper: FC<PropsWith<'children', {}>> = ({ children }) => {
-  return (
-    <div className={cn(styles.iconWrapper, 'text-current')}>{children}</div>
-  );
+  return <>{children}</>;
 };
 
 const iconClasses = cn(styles.icon);
