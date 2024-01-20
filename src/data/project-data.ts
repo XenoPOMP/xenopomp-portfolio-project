@@ -265,7 +265,6 @@ const projectData: IProject[] = sortProjects([
       next: true,
       react: true,
       typescript: true,
-      zustand: true,
     },
     links: {
       ...generateLinks.website({
