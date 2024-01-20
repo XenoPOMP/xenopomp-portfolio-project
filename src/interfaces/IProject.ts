@@ -20,7 +20,7 @@ export type StackTechnology =
   | 'electron'
   | 'expo';
 
-export type BackendStackTechnology = 'nest' | 'prisma';
+export type BackendStackTechnology = 'nest' | 'prisma' | 'mssql' | 'postgres';
 
 export interface IProject {
   priority?: ProjectPriority;

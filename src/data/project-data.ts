@@ -73,6 +73,7 @@ const projectData: IProject[] = sortProjects([
     },
     backendStack: {
       nest: true,
+      mssql: true,
     },
     links: {
       primary: {
