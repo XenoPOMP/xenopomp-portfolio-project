@@ -15,7 +15,7 @@ const MadeOnBlock: VariableFC<'div', MadeOnBlockProps> = ({
     <>
       <div
         className={cn(
-          'flex flex-wrap gap-[.5em] items-center',
+          'text-font-primary flex flex-wrap gap-[.5em] items-center',
           reversed && 'justify-end',
           className
         )}
