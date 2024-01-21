@@ -10,6 +10,7 @@ import ptPlatinumPreview from '@/public/previews/pt-platinum-preview.png';
 import shopGuidePreview from '@/public/previews/shop-guide-preview.png';
 import smartAcePreview from '@/public/previews/smart-ace-preview.png';
 import wepPegasTwoPreview from '@/public/previews/web-pegas-2.0-preview.png';
+import yskPreview from '@/public/previews/ysk_preview.png';
 import { IProject } from '@/src/interfaces/IProject';
 import sortProjects from '@/src/utils/sortProjects';
 
@@ -48,6 +49,16 @@ const generateLinks = {
 };
 
 const genericStack = {
+  /** React Vite template */
+  rvt: {
+    madeOn: {
+      react: true,
+      vite: true,
+      typescript: true,
+      redux: true,
+    },
+  },
+
   /** Nest, Prisma */
   nepr: {
     backendStack: {
@@ -302,6 +313,29 @@ const projectData: IProject[] = sortProjects([
       src: gstPreview,
       alt: 'Game Size Tracker',
       orientation: 'horizontal',
+    },
+  },
+
+  {
+    title: 'Сайт для ЯСК',
+    description: [
+      'Этот проект я выполнял во время практики в 2022 году.',
+      'В этом проекте я впервые начал использовать Framer Motion.',
+    ],
+    madeOn: {
+      ...genericStack.rvt.madeOn,
+      redux: false,
+    },
+    links: {
+      ...generateLinks.website({
+        siteAddress: 'https://ysk-college-work.netlify.app',
+        repo: 'https://github.com/XenoPOMP/college-2022-practice-project/tree/master',
+      }),
+    },
+    image: {
+      src: yskPreview,
+      alt: 'Сайт для компании ЯСК',
+      orientation: 'square',
     },
   },
 ]);
