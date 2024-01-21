@@ -15,12 +15,12 @@ const MadeOnBlock: VariableFC<'div', MadeOnBlockProps> = ({
     <>
       <div
         className={cn(
-          'text-font-third-rate flex flex-wrap gap-[.5em] items-center',
+          'flex flex-wrap gap-[.5em] items-center',
           reversed && 'justify-end',
           className
         )}
       >
-        <span>{label}</span>
+        <span className={cn('text-font-third-rate')}>{label}</span>
         {children}
       </div>
     </>
