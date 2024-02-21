@@ -1,7 +1,8 @@
 {
   "header": {
     "nav": {
-      "label": "Привет мир!"
+      "projects": "Проекты",
+      "aboutMe": "Обо мне"
     }
   }
 }

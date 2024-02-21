@@ -5,7 +5,8 @@ import { type Locale } from './i18n-config';
 interface LocalizationData {
   header: {
     nav: {
-      label: string;
+      projects: string;
+      aboutMe: string;
     };
   };
 }
@@ -16,4 +17,4 @@ const dictionaries: Record<Locale, () => Promise<LocalizationData>> = {
 };
 
 export const getDictionary = async (locale: Locale) =>
-  dictionaries[locale]?.() ?? dictionaries.en();
+  dictionaries[locale]?.() ?? dictionaries.ru();
