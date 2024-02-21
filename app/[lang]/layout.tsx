@@ -74,7 +74,7 @@ export default async function RootLayout({
 
           {children}
 
-          <Footer />
+          <Footer lang={lang} />
 
           {/* Disable Metrika in dev environment. */}
           {!METRIKA_DISABLED && <Metrika id={95183872} />}
