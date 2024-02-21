@@ -13,6 +13,15 @@
         "iam": "I`m - ",
         "frontendDev": "<front-end dev/>",
         "desc": "A front-end developer with experience in React, TypeScript, Next and other technologies. I am always looking for new tasks to solve."
+      },
+
+      "percentage": {
+        "heading": "The technologies used in my projects"
+      },
+
+      "projects": {
+        "heading": "My projects",
+        "allProjects": "All projects"
       }
     }
   }

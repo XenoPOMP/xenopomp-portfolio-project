@@ -12,9 +12,9 @@ export default async function Home({ params: { lang } }: {} & LangParams) {
     <main>
       <AboutMeSection locales={dict.main.sections.aboutMe} />
 
-      <PercentageSection />
+      <PercentageSection locales={dict.main.sections.percentage} />
 
-      <ProjectSection />
+      <ProjectSection locales={dict.main.sections.projects} />
     </main>
   );
 }

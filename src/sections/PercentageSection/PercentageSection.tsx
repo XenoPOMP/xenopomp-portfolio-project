@@ -20,7 +20,7 @@ const PercentageSection: VariableFC<
   typeof UiContainer,
   PercentageSectionProps,
   'children' | 'as'
-> = ({ className, ...props }) => {
+> = ({ className, locales, ...props }) => {
   const getEntries = (): Record<
     'frontend' | 'backend',
     ComponentProps<typeof StackPercentBlock>['entries']
@@ -94,7 +94,7 @@ const PercentageSection: VariableFC<
       className={cn(styles.percentage, className)}
       {...props}
     >
-      <Heading level={'2'}>Используемые технологии в моих проектах</Heading>
+      <Heading level={'2'}>{locales.heading}</Heading>
 
       <div className={cn(styles.groups)}>
         <StackPercentBlock

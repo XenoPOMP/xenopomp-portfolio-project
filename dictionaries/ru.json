@@ -13,6 +13,15 @@
         "iam": "Я - ",
         "frontendDev": "<front-end разработчик/>",
         "desc": "Front-end разработчик с опытом работы в React, TypeScript, NextJS и в других технологиях. Я всегда ищу новые задачи для решения."
+      },
+
+      "percentage": {
+        "heading": "Используемые технологии в моих проектах"
+      },
+
+      "projects": {
+        "heading": "Мои проекты",
+        "allProjects": "Все проекты"
       }
     }
   }

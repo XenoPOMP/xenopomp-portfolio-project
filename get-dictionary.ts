@@ -18,6 +18,15 @@ export interface LocalizationData {
         frontendDev: string;
         desc: string;
       };
+
+      percentage: {
+        heading: string;
+      };
+
+      projects: {
+        heading: string;
+        allProjects: string;
+      };
     };
   };
 }
