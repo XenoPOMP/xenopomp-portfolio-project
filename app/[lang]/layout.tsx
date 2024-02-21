@@ -1,4 +1,5 @@
-import type { Metadata } from 'next';
+import { WithParams, WithSearchParams } from '@xenopomp/advanced-types';
+import type { Metadata, ResolvingMetadata } from 'next';
 import Metrika from 'next-metrika';
 import { OpenGraphType } from 'next/dist/lib/metadata/types/opengraph-types';
 import { Geologica } from 'next/font/google';
@@ -14,6 +15,7 @@ import Providers from '@/src/components/layout/Providers/Providers';
 import SFProDisplay from '@/src/fonts/sf-pro-display-font';
 import { useEnv } from '@/src/hooks/useEnv';
 import { LangParams } from '@/src/types/LangParams';
+import { generateStaticMetadata } from '@/src/utils/generateStaticMetadata';
 
 import './globals.scss';
 
@@ -21,36 +23,38 @@ import './globals.scss';
 
 const mainFont = Geologica({ subsets: ['latin', 'cyrillic'] });
 
-export const metadata: Metadata = {
-  title: AppConstants.appName,
-  description:
-    'Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.',
-  keywords: [
-    'Александр Наумов',
-    'XenoPOMP',
-    'xenopomp',
-    'react',
-    'next',
-    'портфолио',
-  ],
-  openGraph: {
-    ...AppConstants.sharedOpenGraphConfig,
+export async function generateMetadata(
+  {
+    params: { lang },
+    searchParams,
+  }: WithSearchParams<WithParams<{}, never>, never> & LangParams,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const dict = await getDictionary(lang);
+  const { desc: description, keywords, ogTitle } = dict.meta;
 
-    images: [
-      ...(AppConstants.sharedOpenGraphConfig?.images ?? []),
-      {
-        url: ogImage.src,
-        width: 1080,
-        height: 608,
-        alt: 'XenoPOMP Портфолио',
-      },
-    ],
-    type: 'website',
-    title: 'Портфолио XenoPOMP',
-    description:
-      'Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.',
-  },
-};
+  return generateStaticMetadata({
+    title: AppConstants.appName,
+    description,
+    keywords,
+    openGraph: {
+      ...AppConstants.sharedOpenGraphConfig,
+
+      images: [
+        ...(AppConstants.sharedOpenGraphConfig?.images ?? []),
+        {
+          url: ogImage.src,
+          width: 1080,
+          height: 608,
+          alt: ogTitle,
+        },
+      ],
+      type: 'website',
+      title: ogTitle,
+      description,
+    },
+  });
+}
 
 export default async function RootLayout({
   children,

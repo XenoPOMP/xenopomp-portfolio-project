@@ -10,6 +10,12 @@ export interface LocalizationData {
     };
   };
 
+  meta: {
+    desc: string;
+    keywords: string[];
+    ogTitle: string;
+  };
+
   main: {
     sections: {
       aboutMe: {

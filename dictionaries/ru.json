@@ -6,6 +6,19 @@
     }
   },
 
+  "meta": {
+    "desc": "Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.",
+    "keywords": [
+      "Александр Наумов",
+      "XenoPOMP",
+      "xenopomp",
+      "react",
+      "next",
+      "портфолио"
+    ],
+    "ogTitle": "Портфолио XenoPOMP"
+  },
+
   "main": {
     "sections": {
       "aboutMe": {

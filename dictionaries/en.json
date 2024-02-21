@@ -6,6 +6,19 @@
     }
   },
 
+  "meta": {
+    "desc": "Hi, my name is Alexander. I am a front-end developer specializing in React, TypeScript, Vite and Next.",
+    "keywords": [
+      "Alex Naumov",
+      "XenoPOMP",
+      "xenopomp",
+      "react",
+      "next",
+      "portfolio"
+    ],
+    "ogTitle": "Portfolio XenoPOMP"
+  },
+
   "main": {
     "sections": {
       "aboutMe": {
