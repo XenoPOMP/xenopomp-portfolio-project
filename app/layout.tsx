@@ -11,6 +11,7 @@ import Footer from '@/src/components/layout/Footer/Footer';
 import Header from '@/src/components/layout/Header/Header';
 import Providers from '@/src/components/layout/Providers/Providers';
 import SFProDisplay from '@/src/fonts/sf-pro-display-font';
+import { useEnv } from '@/src/hooks/useEnv';
 
 import './globals.scss';
 
@@ -54,6 +55,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { METRIKA_DISABLED } = useEnv();
+
   return (
     <html lang='ru'>
       <body className={mainFont.className}>
@@ -65,7 +68,7 @@ export default function RootLayout({
           <Footer />
 
           {/* Disable Metrika in dev environment. */}
-          <Metrika id={95183872} />
+          {!METRIKA_DISABLED && <Metrika id={95183872} />}
         </Providers>
       </body>
     </html>
