@@ -22,7 +22,7 @@ export interface LocalizationData {
   };
 }
 
-const dictionaries: Record<Locale, () => Promise<LocalizationData>> = {
+export const dictionaries: Record<Locale, () => Promise<LocalizationData>> = {
   ru: () => import('./dictionaries/ru.json').then(module => module.default),
   en: () => import('./dictionaries/en.json').then(module => module.default),
 };
