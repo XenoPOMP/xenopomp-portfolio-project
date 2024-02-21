@@ -14,17 +14,20 @@ import type { HeaderProps } from './Header.props';
 
 const font = Unbounded({ subsets: ['latin', 'cyrillic'] });
 
-const Header: FC<HeaderProps> = ({}) => {
+const Header: FC<HeaderProps> = ({ locales: { nav: navLocales } }) => {
   return (
     <header className={cn(font.className, styles.appHeader)}>
       <UiContainer className={cn(styles.container)}>
         <Logotype />
 
         <article className={cn('flex gap-[2em] items-center')}>
-          <DesktopNav className={cn(styles.desktopWrapper)} />
+          <DesktopNav
+            className={cn(styles.desktopWrapper)}
+            locales={navLocales}
+          />
         </article>
 
-        <MobileMenu className={cn(styles.mobile)} />
+        <MobileMenu locales={navLocales} className={cn(styles.mobile)} />
       </UiContainer>
     </header>
   );

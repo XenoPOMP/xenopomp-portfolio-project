@@ -5,6 +5,7 @@ import { Geologica } from 'next/font/google';
 import Script from 'next/script';
 
 import { AppConstants } from '@/app/app.constants';
+import { getDictionary } from '@/get-dictionary';
 import ogImage from '@/public/arts/OpenGraph image Medium.png';
 import ogSquareImage from '@/public/arts/OpenGraph image Square.png';
 import Footer from '@/src/components/layout/Footer/Footer';
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { lang },
 }: {
@@ -59,11 +60,17 @@ export default function RootLayout({
 } & LangParams) {
   const { METRIKA_DISABLED } = useEnv();
 
+  const dict = await getDictionary(lang);
+
   return (
     <html lang={lang}>
       <body className={mainFont.className}>
         <Providers>
-          <Header />
+          <Header
+            locales={{
+              nav: dict.header.nav,
+            }}
+          />
 
           {children}
 

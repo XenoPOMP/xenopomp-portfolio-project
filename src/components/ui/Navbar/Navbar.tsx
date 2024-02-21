@@ -1,4 +1,5 @@
 import { Defined } from '@xenopomp/advanced-types';
+import { getObjectKeys } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -21,9 +22,15 @@ export const appNavbarLinks: Array<{
   },
 ];
 
+export const navbarLinks: Record<keyof NavbarProps['locales'], string> = {
+  projects: '/#projects',
+  aboutMe: '/#about-me',
+};
+
 const Navbar: FC<NavbarProps> = ({
   className,
   variant = 'header',
+  locales,
   ...props
 }) => {
   const variantStyles: Record<
@@ -37,20 +44,22 @@ const Navbar: FC<NavbarProps> = ({
     },
   };
 
+  const LocaleElement = ({ loc }: { loc: keyof NavbarProps['locales'] }) => {
+    return (
+      <li>
+        <Link href={navbarLinks[loc]}>{locales[loc]}</Link>
+      </li>
+    );
+  };
+
   return (
     <nav
       className={cn(styles.navbar, variantStyles[variant].className, className)}
       {...props}
     >
       <ul>
-        {appNavbarLinks.map((link, index) => {
-          const { text, href } = link;
-
-          return (
-            <li key={`navbar-li-elem-${index}`}>
-              <Link href={href}>{text}</Link>
-            </li>
-          );
+        {getObjectKeys(locales).map((key, index) => {
+          return <LocaleElement loc={key} key={`nav-element-${index}`} />;
         })}
       </ul>
     </nav>

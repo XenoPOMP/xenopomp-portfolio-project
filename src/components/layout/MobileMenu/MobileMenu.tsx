@@ -1,17 +1,18 @@
 'use client';
 
 import { Menu, Transition } from '@headlessui/react';
+import { getObjectKeys } from '@xenopomp/advanced-utils';
 import cn from 'classnames';
 import Link from 'next/link';
 import { FC, Fragment } from 'react';
 
-import { appNavbarLinks } from '@/src/components/ui/Navbar/Navbar';
+import { appNavbarLinks, navbarLinks } from '@/src/components/ui/Navbar/Navbar';
 import ThemeSwitcher from '@/src/components/ui/ThemeSwitcher/ThemeSwitcher';
 
 import styles from './MobileMenu.module.scss';
 import type { MobileMenuProps } from './MobileMenu.props';
 
-const MobileMenu: FC<MobileMenuProps> = ({ className, ...props }) => {
+const MobileMenu: FC<MobileMenuProps> = ({ className, locales, ...props }) => {
   return (
     <article className={cn(styles.mobileMenu, className)} {...props}>
       <ThemeSwitcher />
@@ -49,8 +50,9 @@ const MobileMenu: FC<MobileMenuProps> = ({ className, ...props }) => {
               borderRadius: '.5em',
             }}
           >
-            {appNavbarLinks.map((link, index) => {
-              const { text, href } = link;
+            {getObjectKeys(navbarLinks).map((key, index) => {
+              const text = locales[key];
+              const href = navbarLinks[key];
 
               return (
                 <Menu.Item as={'li'} key={`menu-item-${index}`}>

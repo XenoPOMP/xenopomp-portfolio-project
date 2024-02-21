@@ -1,5 +1,9 @@
 import { ComponentProps } from 'react';
 
-export interface NavbarProps extends Omit<ComponentProps<'nav'>, 'children'> {
+import { DesktopNavProps } from '@/src/components/layout/DesktopNav/DesktopNav.props';
+
+export interface NavbarProps
+  extends Omit<ComponentProps<'nav'>, 'children'>,
+    Pick<DesktopNavProps, 'locales'> {
   variant?: 'header';
 }

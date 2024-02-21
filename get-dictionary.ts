@@ -2,7 +2,7 @@ import 'server-only';
 
 import { type Locale } from './i18n-config';
 
-interface LocalizationData {
+export interface LocalizationData {
   header: {
     nav: {
       projects: string;
