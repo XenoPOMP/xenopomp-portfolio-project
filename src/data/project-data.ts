@@ -412,7 +412,8 @@ const projectData: IProject[] = sortProjects([
 
   {
     title: {
-      ru: 'YaSK website',
+      ru: 'Сайт для ЯСК',
+      en: 'YaSK website',
     },
     description: {
       ru: [
