@@ -14,7 +14,6 @@ export const AppConstants: IAppConstants = {
     ],
     siteName: 'XenoPOMP',
     url: process.env.CANONICAL_URL,
-    locale: 'ru_RU',
   },
   themeNames: {
     dark: 'dark-theme',

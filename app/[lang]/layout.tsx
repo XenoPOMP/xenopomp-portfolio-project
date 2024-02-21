@@ -40,6 +40,8 @@ export async function generateMetadata(
     openGraph: {
       ...AppConstants.sharedOpenGraphConfig,
 
+      locale: lang,
+
       images: [
         ...(AppConstants.sharedOpenGraphConfig?.images ?? []),
         {
