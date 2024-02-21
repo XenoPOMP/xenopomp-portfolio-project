@@ -12,6 +12,7 @@ import Header from '@/src/components/layout/Header/Header';
 import Providers from '@/src/components/layout/Providers/Providers';
 import SFProDisplay from '@/src/fonts/sf-pro-display-font';
 import { useEnv } from '@/src/hooks/useEnv';
+import { LangParams } from '@/src/types/LangParams';
 
 import './globals.scss';
 
@@ -52,13 +53,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { lang },
 }: {
   children: React.ReactNode;
-}) {
+} & LangParams) {
   const { METRIKA_DISABLED } = useEnv();
 
   return (
-    <html lang='ru'>
+    <html lang={lang}>
       <body className={mainFont.className}>
         <Providers>
           <Header />
