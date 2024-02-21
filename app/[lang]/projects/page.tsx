@@ -12,7 +12,7 @@ const AllProjectsPage: AsyncFC<{} & LangParams> = async ({
 
   return (
     <main>
-      <ProjectSection locales={dict.main.sections.projects} />
+      <ProjectSection lang={lang} locales={dict.main.sections.projects} />
     </main>
   );
 };
