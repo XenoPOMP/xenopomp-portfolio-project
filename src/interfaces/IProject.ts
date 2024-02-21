@@ -27,7 +27,10 @@ export type BackendStackTechnology = 'nest' | 'prisma' | 'mssql' | 'postgres';
 type NonDefaultLocales = Exclude<Locale, DefaultLocale>;
 
 /** Makes localization record. */
-type Localized<T> = SelectivePartial<Record<Locale, T>, NonDefaultLocales>;
+export type Localized<T> = SelectivePartial<
+  Record<Locale, T>,
+  NonDefaultLocales
+>;
 
 /**
  * Extract localized project info.

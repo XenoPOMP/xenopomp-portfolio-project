@@ -120,10 +120,18 @@ const ProjectView: FC<ProjectViewProps> = ({
             </div>
 
             <>
-              <MadeOnBlock reversed={reversed}>{getMadeOnString()}</MadeOnBlock>
+              <MadeOnBlock lang={lang} reversed={reversed}>
+                {getMadeOnString()}
+              </MadeOnBlock>
 
               {backendStack && (
-                <MadeOnBlock reversed={reversed} label={'Backend:'}>
+                <MadeOnBlock
+                  reversed={reversed}
+                  label={{
+                    ru: 'Backend:',
+                  }}
+                  lang={lang}
+                >
                   {getMadeOnString({
                     isBackend: true,
                   })}
