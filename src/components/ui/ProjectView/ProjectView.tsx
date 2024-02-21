@@ -113,9 +113,10 @@ const ProjectView: FC<ProjectViewProps> = ({
 
           <div className={cn(styles.body)}>
             <div>
-              {description?.map(str => {
-                return <p>{str}</p>;
-              })}
+              {typeof description !== 'undefined' &&
+                extractLocalized(description, lang)?.map(str => {
+                  return <p>{str}</p>;
+                })}
             </div>
 
             <>

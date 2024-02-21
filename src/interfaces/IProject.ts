@@ -42,7 +42,7 @@ export const extractLocalized = <T>(loc: Localized<T>, lang: Locale) => {
 export interface IProject {
   priority?: ProjectPriority;
   title: Localized<string>;
-  description?: string[];
+  description?: Localized<string[]>;
   madeOn?: Partial<Record<StackTechnology, boolean>>;
   backendStack?: Partial<
     ReplaceRecordKey<NonNullable<IProject['madeOn']>, BackendStackTechnology>
