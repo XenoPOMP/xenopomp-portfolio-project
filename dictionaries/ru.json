@@ -4,5 +4,16 @@
       "projects": "Проекты",
       "aboutMe": "Обо мне"
     }
+  },
+
+  "main": {
+    "sections": {
+      "aboutMe": {
+        "heading": "Привет, меня зовут Александр",
+        "iam": "Я - ",
+        "frontendDev": "<front-end разработчик/>",
+        "desc": "Front-end разработчик с опытом работы в React, TypeScript, NextJS и в других технологиях. Я всегда ищу новые задачи для решения."
+      }
+    }
   }
 }

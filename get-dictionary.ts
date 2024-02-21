@@ -9,6 +9,17 @@ export interface LocalizationData {
       aboutMe: string;
     };
   };
+
+  main: {
+    sections: {
+      aboutMe: {
+        heading: string;
+        iam: string;
+        frontendDev: string;
+        desc: string;
+      };
+    };
+  };
 }
 
 const dictionaries: Record<Locale, () => Promise<LocalizationData>> = {

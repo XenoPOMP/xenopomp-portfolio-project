@@ -11,24 +11,22 @@ import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 import styles from './AboutMeSection.module.scss';
 import type { AboutMeSectionProps } from './AboutMeSection.props';
 
-const AboutMeSection: FC<AboutMeSectionProps> = ({}) => {
+const AboutMeSection: FC<AboutMeSectionProps> = ({ locales }) => {
   return (
     <UiContainer className={cn(styles.aboutMe)} id={'about-me'}>
       <article className={cn(styles.part, styles.leftPart)}>
         <header>
           <h1>
-            Привет, меня зовут Александр <Emoji name={'victoryHand'} />
+            {locales.heading} <Emoji name={'victoryHand'} />
           </h1>
 
           <p className={cn(styles.desc)}>
-            Я - <strong>{'<front-end разработчик/>'}</strong>
+            {locales.iam}
+            <strong>{locales.frontendDev}</strong>
           </p>
         </header>
 
-        <desc>
-          Front-end разработчик с опытом работы в React, TypeScript, NextJS и в
-          других технологиях. Я всегда ищу новые задачи для решения.
-        </desc>
+        <desc>{locales.desc}</desc>
 
         <SocialMediaLinks />
       </article>

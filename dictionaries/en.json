@@ -4,5 +4,16 @@
       "projects": "Projects",
       "aboutMe": "About me"
     }
+  },
+
+  "main": {
+    "sections": {
+      "aboutMe": {
+        "heading": "Hi! My name is Alex",
+        "iam": "I`m - ",
+        "frontendDev": "<front-end dev/>",
+        "desc": "A front-end developer with experience in React, TypeScript, Next and other technologies. I am always looking for new tasks to solve."
+      }
+    }
   }
 }
