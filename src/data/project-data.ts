@@ -80,6 +80,11 @@ const projectData: IProject[] = sortProjects([
         'Этот проект - это мой курсовой проект за 2023 год. Тема проекта - веб-приложение для компании, предоставляющей IT-услуги.',
         'На данный момент этот проект - мой самый сложный и технологичный. В нем я использовал все свои наработки в области React.',
       ],
+
+      en: [
+        'This project is my course project for 2023. The theme of the project is a web application for a company providing IT services.',
+        'At the moment, this project is my most difficult and technologically advanced. In it, I used all my experience in the field of React.',
+      ],
     },
     madeOn: {
       react: true,
@@ -116,7 +121,11 @@ const projectData: IProject[] = sortProjects([
     priority: 'high',
     description: {
       ru: [
-        'Данный проект - переосмысление моего предыдущего проекта. написанный на новом стеке.',
+        'Данный проект - переосмысление моего предыдущего проекта, написанный на новом стеке.',
+      ],
+
+      en: [
+        'This project is a reinterpretation of my previous project, written on a new stack.',
       ],
     },
     madeOn: {
@@ -151,6 +160,10 @@ const projectData: IProject[] = sortProjects([
       ru: [
         'TypeScript библиотека, которая содержит в себе различные полезные типы. Эта библиотека наполнялась типами по мере создания мною проектов.',
       ],
+
+      en: [
+        'TypeScript is a library that contains various useful types. This library was filled with types as I created projects.',
+      ],
     },
     madeOn: {
       typescript: true,
@@ -182,6 +195,10 @@ const projectData: IProject[] = sortProjects([
       ru: [
         'Это расширение нужно для того, чтобы просматривать все картинки на сайте. Вы также можете посмотреть информацию об этих картинках, скопировать или скачать их.',
       ],
+
+      en: [
+        'This extension is needed in order to view all the images on the site. You can also view information about these pictures, copy or download them.',
+      ],
     },
     madeOn: {
       react: true,
@@ -211,6 +228,10 @@ const projectData: IProject[] = sortProjects([
     description: {
       ru: [
         'Это расширение я разработал для того, чтобы считать, сколько мне нужно будет заплатить рублей, чтобы пополнить мою виртуальную карточку Oldubil. Также расширение может показывать, сколько стоит введенная сумма рублей в долларах, евро и тенге.',
+      ],
+
+      en: [
+        'I developed this extension in order to calculate how much I will need to pay rubles to replenish my Oldubil virtual card. The extension can also show how much the entered amount of rubles is in dollars, euros and tenge.',
       ],
     },
     madeOn: {
@@ -242,6 +263,9 @@ const projectData: IProject[] = sortProjects([
     description: {
       ru: [
         'Однажды я захотел пройти игру Pizza Tower на все достижения. Поэтому я создал сайт, на котором я бы мог отслеживать свой прогресс в прохождении игры на платину, а также посмотреть условия выполнения неполученных достижений.',
+      ],
+      en: [
+        "One day I wanted to complete the Pizza Tower game for all achievements. That's why I created a website where I could track my progress in completing the game for platinum, as well as see the conditions for completing unachieved achievements.",
       ],
     },
     madeOn: {
@@ -279,6 +303,11 @@ const projectData: IProject[] = sortProjects([
         'Cube Vista - сервер по Майнкрафту, который я планировал создать.',
         'На главной странице сайта имеется возможность посмотреть, онлайн ли сейчас сервер, или нет.',
       ],
+
+      en: [
+        'Cube Vista is a Minecraft server that I planned to create.',
+        'On the main page of the site, you can see whether the server is online or not.',
+      ],
     },
     madeOn: {
       next: true,
@@ -309,6 +338,11 @@ const projectData: IProject[] = sortProjects([
         'Тестовое задание в компанию Перцы (Ярославль).',
         'Особенностью этого проекта является скорость его написания - всего 2 дня.',
       ],
+
+      en: [
+        'A test assignment for the company Studio Peppers (Yaroslavl).',
+        'The peculiarity of this project is the speed of its writing - only 2 days.',
+      ],
     },
     madeOn: {
       next: true,
@@ -338,6 +372,11 @@ const projectData: IProject[] = sortProjects([
         'Game Size Tracker - программа, которая позволяет вам отследить, сколько весят все установленные на вашем ПК игры.',
         'В этом приложении я впервые смог реализовать смену тем в десктопном приложении на React + Vite + Electron',
       ],
+
+      en: [
+        'Game Size Tracker is a program that allows you to track how much all the games installed on your PC weigh.',
+        'In this application, for the first time, I was able to analyze the temperature change in real time on React + Vite + Electron',
+      ],
     },
     madeOn: {
       react: true,
@@ -366,6 +405,11 @@ const projectData: IProject[] = sortProjects([
       ru: [
         'Этот проект я выполнял во время практики в 2022 году.',
         'В этом проекте я впервые начал использовать Framer Motion.',
+      ],
+
+      en: [
+        'I carried out this project during my internship in 2022.',
+        'In this project, I started using Framer Motion for the first time.',
       ],
     },
     madeOn: {
