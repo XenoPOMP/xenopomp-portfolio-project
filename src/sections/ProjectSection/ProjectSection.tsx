@@ -16,6 +16,7 @@ const ProjectSection: FC<ProjectSectionProps> = ({
   id,
   displayLimit = -1,
   locales,
+  lang,
   ...props
 }) => {
   const hasMoreLink = displayLimit > 0 && projectData.length > displayLimit;
@@ -43,6 +44,7 @@ const ProjectSection: FC<ProjectSectionProps> = ({
               project={project}
               key={`project-view-${index}`}
               reversed={!(index % 2 === 0)}
+              lang={lang}
             />
           );
         })}

@@ -14,7 +14,7 @@ export default async function Home({ params: { lang } }: {} & LangParams) {
 
       <PercentageSection locales={dict.main.sections.percentage} />
 
-      <ProjectSection locales={dict.main.sections.projects} />
+      <ProjectSection lang={lang} locales={dict.main.sections.projects} />
     </main>
   );
 }

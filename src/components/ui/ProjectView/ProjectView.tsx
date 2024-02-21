@@ -22,6 +22,7 @@ const ProjectView: FC<ProjectViewProps> = ({
   project,
   reversed,
   className,
+  lang,
   ...props
 }) => {
   const { title, description, madeOn, backendStack, links, image } = project;
