@@ -5,7 +5,10 @@ export default function sitemap(): Sitemap {
 
   return injectI18n(CANONICAL, [
     {
-      url: '',
+      url: '/',
+    },
+    {
+      url: '/projects',
     },
   ]);
 }
