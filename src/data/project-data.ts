@@ -70,7 +70,10 @@ const genericStack = {
 
 const projectData: IProject[] = sortProjects([
   {
-    title: 'Вебсайт SmartAce',
+    title: {
+      ru: 'Вебсайт SmartAce',
+      en: 'SmartAce website',
+    },
     priority: 'high',
     description: [
       'Этот проект - это мой курсовой проект за 2023 год. Тема проекта - веб-приложение для компании, предоставляющей IT-услуги.',
@@ -105,7 +108,9 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'WebPegas 2.0',
+    title: {
+      ru: 'WebPegas 2.0',
+    },
     priority: 'high',
     description: [
       'Данный проект - переосмысление моего предыдущего проекта. написанный на новом стеке.',
@@ -134,7 +139,9 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'advanced-types',
+    title: {
+      ru: 'advanced-types',
+    },
     priority: 'medium',
     description: [
       'TypeScript библиотека, которая содержит в себе различные полезные типы. Эта библиотека наполнялась типами по мере создания мною проектов.',
@@ -161,7 +168,10 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'Расширение для браузера Image Grabber',
+    title: {
+      ru: 'Расширение для браузера Image Grabber',
+      en: 'Image Grabber - the Chrome extension',
+    },
     description: [
       'Это расширение нужно для того, чтобы просматривать все картинки на сайте. Вы также можете посмотреть информацию об этих картинках, скопировать или скачать их.',
     ],
@@ -186,7 +196,10 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'Расширение для браузера Oldubil Calculator',
+    title: {
+      ru: 'Расширение для браузера Oldubil Calculator',
+      en: 'Oldubil Calculator - the Chrome extension',
+    },
     description: [
       'Это расширение я разработал для того, чтобы считать, сколько мне нужно будет заплатить рублей, чтобы пополнить мою виртуальную карточку Oldubil. Также расширение может показывать, сколько стоит введенная сумма рублей в долларах, евро и тенге.',
     ],
@@ -211,7 +224,10 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'Сайт Pizza Tower Platinum',
+    title: {
+      ru: 'Сайт Pizza Tower Platinum',
+      en: 'Pizza Tower Platinum site',
+    },
     priority: 'medium',
     description: [
       'Однажды я захотел пройти игру Pizza Tower на все достижения. Поэтому я создал сайт, на котором я бы мог отслеживать свой прогресс в прохождении игры на платину, а также посмотреть условия выполнения неполученных достижений.',
@@ -241,7 +257,10 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'Лендинг для Cube Vista (Minecraft сервер)',
+    title: {
+      ru: 'Лендинг для Cube Vista (Minecraft сервер)',
+      en: 'Cube Vista landing (Minecraft server)',
+    },
     priority: 'high',
     description: [
       'Cube Vista - сервер по Майнкрафту, который я планировал создать.',
@@ -266,7 +285,10 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'Лендинг для ShopGuide',
+    title: {
+      ru: 'Лендинг для ShopGuide',
+      en: 'ShopGuide landing',
+    },
     priority: 'medium',
     description: [
       'Тестовое задание в компанию Перцы (Ярославль).',
@@ -291,7 +313,9 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'Game Size Tracker',
+    title: {
+      ru: 'Game Size Tracker',
+    },
     priority: 'medium',
     description: [
       'Game Size Tracker - программа, которая позволяет вам отследить, сколько весят все установленные на вашем ПК игры.',
@@ -317,7 +341,9 @@ const projectData: IProject[] = sortProjects([
   },
 
   {
-    title: 'Сайт для ЯСК',
+    title: {
+      ru: 'YaSK website',
+    },
     description: [
       'Этот проект я выполнял во время практики в 2022 году.',
       'В этом проекте я впервые начал использовать Framer Motion.',

@@ -1,7 +1,9 @@
+import { SelectivePartial } from '@xenopomp/advanced-types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ComponentProps, ReactNode } from 'react';
 
+import { DefaultLocale, Locale } from '@/i18n-config';
 import { ReplaceRecordKey } from '@/src/types/ReplaceRecordKey';
 
 export type ProjectPriority = 'high' | 'medium' | 'low';
@@ -22,9 +24,24 @@ export type StackTechnology =
 
 export type BackendStackTechnology = 'nest' | 'prisma' | 'mssql' | 'postgres';
 
+type NonDefaultLocales = Exclude<Locale, DefaultLocale>;
+
+/** Makes localization record. */
+type Localized<T> = SelectivePartial<Record<Locale, T>, NonDefaultLocales>;
+
+/**
+ * Extract localized project info.
+ *
+ * @param loc
+ * @param lang
+ */
+export const extractLocalized = <T>(loc: Localized<T>, lang: Locale) => {
+  return loc[lang] ?? loc['ru'];
+};
+
 export interface IProject {
   priority?: ProjectPriority;
-  title: string;
+  title: Localized<string>;
   description?: string[];
   madeOn?: Partial<Record<StackTechnology, boolean>>;
   backendStack?: Partial<

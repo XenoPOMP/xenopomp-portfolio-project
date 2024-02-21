@@ -12,6 +12,7 @@ import Button from '@/src/components/ui/Button/Button';
 import MadeOnBlock from '@/src/components/ui/MadeOnBlock/MadeOnBlock';
 import WithTooltip from '@/src/components/ui/WithTooltip/WithTooltip';
 import techIcons from '@/src/data/tech-icons';
+import { extractLocalized } from '@/src/interfaces/IProject';
 
 import styles from './ProjectView.module.scss';
 import type { ProjectViewProps } from './ProjectView.props';
@@ -108,7 +109,7 @@ const ProjectView: FC<ProjectViewProps> = ({
 
       <div className={cn(styles.textBlock)}>
         <header className={cn(styles.titleBlock)}>
-          <h2>{title}</h2>
+          <h2>{extractLocalized(title, lang)}</h2>
 
           <div className={cn(styles.body)}>
             <div>
