@@ -1,5 +1,6 @@
 footer.appFooter {
-  @apply bg-footer-primary text-footer-secondary;
+  @apply bg-footer-primary text-footer-secondary
+         flex flex-col gap-[.75em];
 
   font-size: 1rem; // 1em = 20px
 
@@ -8,5 +9,9 @@ footer.appFooter {
 
     padding-top: calc(var(--margin) / 2);
     padding-bottom: calc(var(--margin) / 2);
+  }
+
+  section:last-of-type {
+    margin-bottom: calc(var(--margin) / 2);
   }
 }

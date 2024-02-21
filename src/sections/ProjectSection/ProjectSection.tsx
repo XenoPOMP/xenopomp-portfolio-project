@@ -15,6 +15,8 @@ const ProjectSection: FC<ProjectSectionProps> = ({
   className,
   id,
   displayLimit = -1,
+  locales,
+  lang,
   ...props
 }) => {
   const hasMoreLink = displayLimit > 0 && projectData.length > displayLimit;
@@ -34,7 +36,7 @@ const ProjectSection: FC<ProjectSectionProps> = ({
         id={id ?? 'projects'}
         {...props}
       >
-        <Heading level={'2'}>Мои проекты</Heading>
+        <Heading level={'2'}>{locales.heading}</Heading>
 
         {displayingProjects.map((project, index) => {
           return (
@@ -42,6 +44,7 @@ const ProjectSection: FC<ProjectSectionProps> = ({
               project={project}
               key={`project-view-${index}`}
               reversed={!(index % 2 === 0)}
+              lang={lang}
             />
           );
         })}
@@ -55,7 +58,7 @@ const ProjectSection: FC<ProjectSectionProps> = ({
                 styles.allProjects
               )}
             >
-              Все проекты
+              {locales.allProjects}
             </Link>
           </>
         )}

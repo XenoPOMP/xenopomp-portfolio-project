@@ -11,6 +11,7 @@ import type { DesktopNavProps } from './DesktopNav.props';
 const DesktopNav: VariableFC<'div', DesktopNavProps, 'children'> = ({
   className,
   style,
+  locales,
   ...props
 }) => {
   return (
@@ -24,7 +25,7 @@ const DesktopNav: VariableFC<'div', DesktopNavProps, 'children'> = ({
       }}
       {...props}
     >
-      <Navbar className={cn(styles.desktop)} />
+      <Navbar className={cn(styles.desktop)} locales={locales} />
 
       <ThemeSwitcher className={cn(styles.desktop)} />
     </div>

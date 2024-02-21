@@ -12,6 +12,7 @@ import Button from '@/src/components/ui/Button/Button';
 import MadeOnBlock from '@/src/components/ui/MadeOnBlock/MadeOnBlock';
 import WithTooltip from '@/src/components/ui/WithTooltip/WithTooltip';
 import techIcons from '@/src/data/tech-icons';
+import { extractLocalized } from '@/src/interfaces/IProject';
 
 import styles from './ProjectView.module.scss';
 import type { ProjectViewProps } from './ProjectView.props';
@@ -22,6 +23,7 @@ const ProjectView: FC<ProjectViewProps> = ({
   project,
   reversed,
   className,
+  lang,
   ...props
 }) => {
   const { title, description, madeOn, backendStack, links, image } = project;
@@ -107,20 +109,29 @@ const ProjectView: FC<ProjectViewProps> = ({
 
       <div className={cn(styles.textBlock)}>
         <header className={cn(styles.titleBlock)}>
-          <h2>{title}</h2>
+          <h2>{extractLocalized(title, lang)}</h2>
 
           <div className={cn(styles.body)}>
             <div>
-              {description?.map(str => {
-                return <p>{str}</p>;
-              })}
+              {typeof description !== 'undefined' &&
+                extractLocalized(description, lang)?.map(str => {
+                  return <p>{str}</p>;
+                })}
             </div>
 
             <>
-              <MadeOnBlock reversed={reversed}>{getMadeOnString()}</MadeOnBlock>
+              <MadeOnBlock lang={lang} reversed={reversed}>
+                {getMadeOnString()}
+              </MadeOnBlock>
 
               {backendStack && (
-                <MadeOnBlock reversed={reversed} label={'Backend:'}>
+                <MadeOnBlock
+                  reversed={reversed}
+                  label={{
+                    ru: 'Backend:',
+                  }}
+                  lang={lang}
+                >
                   {getMadeOnString({
                     isBackend: true,
                   })}
@@ -132,12 +143,14 @@ const ProjectView: FC<ProjectViewProps> = ({
 
         <footer className={cn(styles.buttonBlock)}>
           {links?.primary && (
-            <Button href={links.primary.href}>{links.primary.content}</Button>
+            <Button href={links.primary.href}>
+              {extractLocalized(links.primary.content, lang)}
+            </Button>
           )}
 
           {links?.secondary && (
             <Button variant={'secondary'} href={links.secondary.href}>
-              {links.secondary.content}
+              {extractLocalized(links.secondary.content, lang)}
             </Button>
           )}
         </footer>

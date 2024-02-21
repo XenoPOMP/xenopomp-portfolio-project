@@ -1,6 +1,8 @@
-import { PropsWith, VariableFC } from '@xenopomp/advanced-types';
+import { Defined, PropsWith, VariableFC } from '@xenopomp/advanced-types';
 import cn from 'classnames';
 import { FC } from 'react';
+
+import { extractLocalized } from '@/src/interfaces/IProject';
 
 import styles from './MadeOnBlock.module.scss';
 import { MadeOnBlockProps } from './MadeOnBlock.props';
@@ -9,8 +11,14 @@ const MadeOnBlock: VariableFC<'div', MadeOnBlockProps> = ({
   reversed,
   children,
   className,
-  label = 'Сделан на:',
+  label,
+  lang,
 }) => {
+  const labelLocales: Defined<typeof label> = label ?? {
+    ru: 'Сделан на: ',
+    en: 'Made on: ',
+  };
+
   return (
     <>
       <div
@@ -20,7 +28,9 @@ const MadeOnBlock: VariableFC<'div', MadeOnBlockProps> = ({
           className
         )}
       >
-        <span className={cn('text-font-third-rate')}>{label}</span>
+        <span className={cn('text-font-third-rate')}>
+          {extractLocalized(labelLocales, lang)}
+        </span>
         {children}
       </div>
     </>

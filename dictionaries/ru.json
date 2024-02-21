@@ -1,0 +1,41 @@
+{
+  "header": {
+    "nav": {
+      "projects": "Проекты",
+      "aboutMe": "Обо мне"
+    }
+  },
+
+  "meta": {
+    "desc": "Привет, меня зовут Александр. Я являюсь front-end разработчиков, специализирующимся на React, TypeScript, Vite и Next.",
+    "keywords": [
+      "Александр Наумов",
+      "XenoPOMP",
+      "xenopomp",
+      "react",
+      "next",
+      "портфолио"
+    ],
+    "ogTitle": "Портфолио XenoPOMP"
+  },
+
+  "main": {
+    "sections": {
+      "aboutMe": {
+        "heading": "Привет, меня зовут Александр",
+        "iam": "Я - ",
+        "frontendDev": "<front-end разработчик/>",
+        "desc": "Front-end разработчик с опытом работы в React, TypeScript, NextJS и в других технологиях. Я всегда ищу новые задачи для решения."
+      },
+
+      "percentage": {
+        "heading": "Используемые технологии в моих проектах"
+      },
+
+      "projects": {
+        "heading": "Мои проекты",
+        "allProjects": "Все проекты"
+      }
+    }
+  }
+}
