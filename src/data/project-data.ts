@@ -23,12 +23,44 @@ const generateLinks = {
 
     return {
       primary: {
-        content: 'Посетить сайт',
+        content: {
+          ru: 'Посетить сайт',
+          en: 'Visit site',
+        },
         href: siteAddress,
       },
 
       secondary: {
-        content: 'Исход. код',
+        content: {
+          ru: 'Исход. код',
+          en: 'Source code',
+        },
+        href: repo,
+      },
+    };
+  },
+
+  library({
+    docsLink,
+    repo,
+  }: {
+    docsLink: string;
+    repo: string;
+  }): Required<IProject['links']> {
+    return {
+      primary: {
+        content: {
+          ru: 'Документация',
+          en: 'Docs',
+        },
+        href: docsLink,
+      },
+
+      secondary: {
+        content: {
+          ru: 'Исход. код',
+          en: 'Source code',
+        },
         href: repo,
       },
     };
@@ -41,7 +73,10 @@ const generateLinks = {
   }): IProject['links'] => {
     return {
       secondary: {
-        content: 'Исход. код',
+        content: {
+          ru: 'Исход. код',
+          en: 'Source code',
+        },
         href,
       },
     };
@@ -97,15 +132,10 @@ const projectData: IProject[] = sortProjects([
       mssql: true,
     },
     links: {
-      primary: {
-        content: 'Посетить сайт',
-        href: 'https://xeno-coursework-2023.netlify.app/',
-      },
-
-      secondary: {
-        content: 'Исход. код',
-        href: 'https://github.com/XenoPOMP/coursework-2023',
-      },
+      ...generateLinks.website({
+        siteAddress: 'https://xeno-coursework-2023.netlify.app/',
+        repo: 'https://github.com/XenoPOMP/coursework-2023',
+      }),
     },
     image: {
       src: smartAcePreview,
@@ -134,15 +164,10 @@ const projectData: IProject[] = sortProjects([
       typescript: true,
     },
     links: {
-      primary: {
-        content: 'Посетить сайт',
-        href: 'https://web-pegas-2-0.vercel.app/',
-      },
-
-      secondary: {
-        content: 'Исход. код',
-        href: 'https://github.com/XenoPOMP/web-pegas-2.0',
-      },
+      ...generateLinks.website({
+        siteAddress: 'https://web-pegas-2-0.vercel.app/',
+        repo: 'https://github.com/XenoPOMP/web-pegas-2.0',
+      }),
     },
     image: {
       src: wepPegasTwoPreview,
@@ -169,15 +194,10 @@ const projectData: IProject[] = sortProjects([
       typescript: true,
     },
     links: {
-      primary: {
-        content: 'Документация',
-        href: 'https://xenopomp.github.io/advanced-types/',
-      },
-
-      secondary: {
-        content: 'Исход. код',
-        href: 'https://github.com/XenoPOMP/advanced-types',
-      },
+      ...generateLinks.library({
+        docsLink: 'https://xenopomp.github.io/advanced-types/',
+        repo: 'https://github.com/XenoPOMP/advanced-types',
+      }),
     },
     image: {
       src: advancedTypesPreview,
@@ -208,10 +228,9 @@ const projectData: IProject[] = sortProjects([
       redux: true,
     },
     links: {
-      secondary: {
-        content: 'Исход. код',
-        href: 'https://github.com/XenoPOMP/image-grabber-extension',
-      },
+      ...generateLinks.sourceCodeOnly({
+        repo: 'https://github.com/XenoPOMP/image-grabber-extension',
+      }),
     },
     image: {
       src: imageGrabberExtensionPreview,
@@ -242,10 +261,9 @@ const projectData: IProject[] = sortProjects([
       redux: true,
     },
     links: {
-      secondary: {
-        content: 'Исход. код',
-        href: 'https://github.com/XenoPOMP/oldubil_calculator_extension',
-      },
+      ...generateLinks.sourceCodeOnly({
+        repo: 'https://github.com/XenoPOMP/oldubil_calculator_extension',
+      }),
     },
     image: {
       src: oldubilExtPreview,
@@ -275,15 +293,10 @@ const projectData: IProject[] = sortProjects([
       redux: true,
     },
     links: {
-      primary: {
-        content: 'Посетить сайт',
-        href: 'https://pizza-tower-platinum.netlify.app/',
-      },
-
-      secondary: {
-        content: 'Исход. код',
-        href: 'https://github.com/XenoPOMP/pt-platinum',
-      },
+      ...generateLinks.website({
+        siteAddress: 'https://pizza-tower-platinum.netlify.app/',
+        repo: 'https://github.com/XenoPOMP/pt-platinum',
+      }),
     },
     image: {
       src: ptPlatinumPreview,

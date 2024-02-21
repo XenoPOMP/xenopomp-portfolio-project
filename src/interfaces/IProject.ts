@@ -51,7 +51,7 @@ export interface IProject {
     Record<
       'primary' | 'secondary',
       {
-        content: ReactNode;
+        content: Localized<ReactNode>;
       } & Pick<ComponentProps<typeof Link>, 'href'>
     >
   >;

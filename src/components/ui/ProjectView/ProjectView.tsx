@@ -135,12 +135,14 @@ const ProjectView: FC<ProjectViewProps> = ({
 
         <footer className={cn(styles.buttonBlock)}>
           {links?.primary && (
-            <Button href={links.primary.href}>{links.primary.content}</Button>
+            <Button href={links.primary.href}>
+              {extractLocalized(links.primary.content, lang)}
+            </Button>
           )}
 
           {links?.secondary && (
             <Button variant={'secondary'} href={links.secondary.href}>
-              {links.secondary.content}
+              {extractLocalized(links.secondary.content, lang)}
             </Button>
           )}
         </footer>
