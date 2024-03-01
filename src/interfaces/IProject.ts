@@ -20,7 +20,8 @@ export type StackTechnology =
   | 'redux'
   | 'zustand'
   | 'electron'
-  | 'expo';
+  | 'expo'
+  | 'tauri';
 
 export type BackendStackTechnology = 'nest' | 'prisma' | 'mssql' | 'postgres';
 
