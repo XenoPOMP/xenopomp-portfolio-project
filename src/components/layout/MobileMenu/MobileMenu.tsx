@@ -56,13 +56,14 @@ const MobileMenu: FC<MobileMenuProps> = ({ className, locales, ...props }) => {
 
               return (
                 <Menu.Item as={'li'} key={`menu-item-${index}`}>
-                  {({ active }) => {
+                  {({ active, close }) => {
                     return (
                       <Link
                         href={href}
                         className={cn(
                           active && 'text-nav-highlight transition-all'
                         )}
+                        onClick={close}
                       >
                         {text}
                       </Link>
