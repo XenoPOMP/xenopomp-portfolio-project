@@ -7,24 +7,9 @@ import { FC } from 'react';
 import styles from './Navbar.module.scss';
 import type { NavbarProps } from './Navbar.props';
 
-export const appNavbarLinks: Array<{
-  text: string;
-  href: string;
-}> = [
-  {
-    text: 'Проекты',
-    href: '#projects',
-  },
-
-  {
-    text: 'Обо мне',
-    href: '#about-me',
-  },
-];
-
 export const navbarLinks: Record<keyof NavbarProps['locales'], string> = {
-  projects: '/#projects',
-  aboutMe: '/#about-me',
+  projects: '#projects',
+  aboutMe: '#about-me',
 };
 
 const Navbar: FC<NavbarProps> = ({
