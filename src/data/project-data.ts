@@ -6,6 +6,7 @@ import cubeVistaPreview from '@/public/previews/cube-vista-preview.png';
 import gstPreview from '@/public/previews/gst_preview.png';
 import imageGrabberExtensionPreview from '@/public/previews/image-grabber-preview.png';
 import oldubilExtPreview from '@/public/previews/oldubil-ext-preview.png';
+import pomodoroPreview from '@/public/previews/pomodoro-preview.png';
 import ptPlatinumPreview from '@/public/previews/pt-platinum-preview.png';
 import shopGuidePreview from '@/public/previews/shop-guide-preview.png';
 import smartAcePreview from '@/public/previews/smart-ace-preview.png';
@@ -440,6 +441,40 @@ const projectData: IProject[] = sortProjects([
       src: yskPreview,
       alt: 'Сайт для компании ЯСК',
       orientation: 'square',
+    },
+  },
+
+  {
+    title: {
+      ru: 'Клон Pomodoro',
+      en: 'Pomodoro clone',
+    },
+    priority: 'medium',
+    description: {
+      ru: [
+        'Клон Pomodoro - приложения для отслеживания рабочего времени.',
+        'В этом проекте я применил новый фреймворк для создания десктопных приложений - Tauri.',
+        'Преимущество Tauri - использование Rust на бекенде, вместо Node.js.',
+      ],
+      en: [
+        'Pomodoro clone - application for tracking working hours.',
+        'In this project, I used a new framework for creating desktop applications - Tauri.',
+        'The advantage of Tauri is the use of Rust on the backend, instead of Node.js .',
+      ],
+    },
+    image: {
+      src: pomodoroPreview,
+      alt: 'Pomodoro',
+      orientation: 'horizontal',
+    },
+    madeOn: {
+      tauri: true,
+      ...genericStack.rvt.madeOn,
+    },
+    links: {
+      ...generateLinks.sourceCodeOnly({
+        repo: 'https://github.com/XenoPOMP/pomodoro-clone',
+      }),
     },
   },
 ]);
