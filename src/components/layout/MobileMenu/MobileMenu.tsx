@@ -6,7 +6,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { FC, Fragment } from 'react';
 
-import { appNavbarLinks, navbarLinks } from '@/src/components/ui/Navbar/Navbar';
+import { navbarLinks } from '@/src/components/ui/Navbar/Navbar';
 import ThemeSwitcher from '@/src/components/ui/ThemeSwitcher/ThemeSwitcher';
 
 import styles from './MobileMenu.module.scss';
@@ -56,13 +56,14 @@ const MobileMenu: FC<MobileMenuProps> = ({ className, locales, ...props }) => {
 
               return (
                 <Menu.Item as={'li'} key={`menu-item-${index}`}>
-                  {({ active }) => {
+                  {({ active, close }) => {
                     return (
                       <Link
                         href={href}
                         className={cn(
                           active && 'text-nav-highlight transition-all'
                         )}
+                        onClick={close}
                       >
                         {text}
                       </Link>

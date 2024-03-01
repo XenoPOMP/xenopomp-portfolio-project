@@ -9,10 +9,6 @@ lerna-debug.log*
 
 # IDE
 .idea/*
-# Version control configaration
-!.idea/**/vcs.xml
-# Prettier config
-!.idea/**/prettier.xml
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
